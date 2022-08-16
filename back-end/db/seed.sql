@@ -10,3 +10,5 @@ INSERT INTO snacks (name, fiber, protein, added_sugar, is_healthy, image) VALUES
 
 -- use advanced image search to choose images that are square (aspect ratio)
 -- https://www.google.com/advanced_image_search
+
+-- 
