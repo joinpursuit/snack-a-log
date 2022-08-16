@@ -10,5 +10,5 @@ CREATE TABLE snacks (
     protein INTEGER,
     added_sugar INTEGER,
     is_healthy BOOLEAN,
-    image IMAGE
+    image VARCHAR(2083)
 )
