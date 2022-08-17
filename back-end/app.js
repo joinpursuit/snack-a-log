@@ -13,7 +13,7 @@ app.use(cors());
 app.use('/snacks', snackController);
 // ROUTES
 app.get('/', (req, res) => {
-    res.send("Welcome to Snack a log")
+    res.send("Get Snack'n at Snack-a-log!")
 })
 app.get('*', (req, res) => {
     res.status(404).send('page not found')
