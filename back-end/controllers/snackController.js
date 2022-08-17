@@ -1,13 +1,20 @@
 const express = require("express");
 const snacks = express.Router();
+// const confirmHealth = require("../confirmHealth.js")
+const checkName = require('../validations/checkName.js')
 
 //QUERIES
-const { getAllSnacks, getSnack, createSnack, updateSnack, deleteSnack } = require("../queries/snacks");
+const {
+  getAllSnacks,
+  getSnack,
+  createSnack,
+  updateSnack,
+  deleteSnack,
+} = require('../queries/snacks');
 
-//VALIDATIONS
-// const { checkImage } = require("../validations/checkPost");
 
-snacks.get("/", async (req, res) => {
+
+snacks.get("/", async (req, res) => { 
     const allSnacks = await getAllSnacks();
     if(allSnacks[0]){
         res.status(200).json({payload: allSnacks, success: true});
@@ -26,24 +33,40 @@ snacks.get("/:id", async (req, res) => {
     };
 });
 
-snacks.post("/", async (req, res) => {
-    try{
-        const snack = await createSnack(req.body);
-        res.json({payload: snack, success: true});
-    }catch(err){
-        return err;
-    };
+snacks.post('/', async (req, res) => {
+    const { body } = req;
+
+    body.is_healthy = confirmHealth(body);
+    body.name = checkName(body);
+
+  try {
+    const createdSnack = await createSnack(body);
+    if (createdSnack.id) {
+      res.status(200).json({
+        success: true,
+        payload: createdSnack
+      });
+    } else {
+      res.status(422).json({
+        success: false,
+        payload: 'Must include name field'
+      });
+    }
+  } catch (err) {
+    console.log(err);
+  }
 });
 
 snacks.put('/:id', async (req, res) => {
-    const { id } = req.params;
-    const updatedSnack = await updateSnack(req.body, id);
-    if(updatedSnack.id){
-        res.status(200).json({payload: updatedSnack, success: true});
-    }else{
-        res.status(400).json({payload: "bad request", success: false});
-    };
+  const { id } = req.params;
+  const updatedSnack = await updateSnack(req.body, id);
+  if (updatedSnack.id) {
+    res.status(200).json(updatedSnack);
+  } else {
+    res.status(404).json({ error: 'Snack not found' });
+  }
 });
+
 
 snacks.delete("/:id", async (req, res) => {
     const { id } = req.params;
