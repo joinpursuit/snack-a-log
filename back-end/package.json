@@ -10,7 +10,7 @@
     "test": "jest --runInBand"
   },
   "keywords": [],
-  "author": "",
+  "author": "Jimmy Ayivor and AC Kleemoff",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
