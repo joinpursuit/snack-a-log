@@ -65,6 +65,6 @@ snacks.put('/:id', validatedImage, checkBooleen, checkName, async(req,res)=>{
   }else{
     res.status(404).json({error:'Snack not updated (line59)'})
   }
-}
+})
 
-module.exports= snacks
+module.exports = snacks
