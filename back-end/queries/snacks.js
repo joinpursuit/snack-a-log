@@ -20,23 +20,27 @@ const getSnack = async (id) => {
 
 const createSnack = async (snack) => {
     const {name, fiber, protein, added_sugar, is_healthy, image} = snack;
-    const splitWord = name.toLowerCase().split(" ")
-    const correctedWord = splitWord.map( word => (
+    let newSnackData;
+
+    const nameLowerCase = name.toLowerCase().split(" ")
+    const nameCorrected = nameLowerCase.map( word => (
         word.length > 2 ? word.replace(/^\w/, c => c.toUpperCase()) : word 
     )).join(" ")
     
-    // const dummyImg = "https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"
 
-    // if(!image) {
-    //     image = dummyImg
-    //     return image
-    // }
+    if(!image) {
+        newSnackData = await db.one(
+            "INSERT INTO snacks (name, fiber, protein, added_sugar, is_healthy, image) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *", [nameCorrected, fiber, protein, added_sugar, is_healthy, "https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"]
+        );
+    } else {
+        newSnackData = await db.one(
+            "INSERT INTO snacks (name, fiber, protein, added_sugar, is_healthy, image) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *", [nameCorrected, fiber, protein, added_sugar, is_healthy, image]
+        );
+    }
     
     try {
-        const newSnack = await db.one(
-            "INSERT INTO snacks (name, fiber, protein, added_sugar, is_healthy, image) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *", [correctedWord, fiber, protein, added_sugar, is_healthy, image]
-        );
-        return newSnack
+        const newSnack = newSnackData
+        return newSnack;
     } catch (err) {
         return err
     }
