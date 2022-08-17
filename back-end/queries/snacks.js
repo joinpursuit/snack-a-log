@@ -52,4 +52,10 @@ const deleteSnack = async (id) =>{
     };
 };
 
-module.exports = { getAllSnacks, getSnack, createSnack, updateSnack, deleteSnack};
+module.exports = {
+  getAllSnacks,
+  getSnack,
+  createSnack,
+  updateSnack,
+  deleteSnack,
+};
