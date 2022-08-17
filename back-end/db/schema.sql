@@ -7,8 +7,8 @@ CREATE TABLE snacks (
     id SERIAL PRIMARY KEY,
     name TEXT,
     fiber INTEGER,
-    protein INTEGER, 
-    added_sugar INTEGER, 
-    is_healthy BOOLEAN, 
-    image IMAGE
-);
+    protein INTEGER,
+    added_sugar INTEGER,
+    is_healthy BOOLEAN,
+    image VARCHAR(2083)
+)

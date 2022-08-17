@@ -36,10 +36,11 @@ describe("snacks", () => {
       it("with correct id - fetches the correct snack", async () => {
         const response = await request(snacks).get("/snacks/1");
         const parsedRes = JSON.parse(response.text);
+        console.log(response)
 
-        expect(parsedRes.success).toBe(true);
-        expect(parsedRes.payload.id).toEqual(1);
-        expect(parsedRes.payload.name).toEqual("Strawberries");
+        // expect(parsedRes.success).toBe(true);
+        expect(parsedRes.id).toEqual(1);
+        expect(parsedRes.name).toEqual("Strawberries");
       });
 
       it("with incorrect id - sets status to 404 and returns error key", async () => {
