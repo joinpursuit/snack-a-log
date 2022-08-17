@@ -1,7 +1,11 @@
 const express = require("express");
 const snacks = express.Router();
 
+//QUERIES
 const { getAllSnacks, getSnack, createSnack, updateSnack, deleteSnack } = require("../queries/snacks");
+
+//VALIDATIONS
+// const { checkImage } = require("../validations/checkPost");
 
 snacks.get("/", async (req, res) => {
     const allSnacks = await getAllSnacks();
