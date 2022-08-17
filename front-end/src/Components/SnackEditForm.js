@@ -71,15 +71,15 @@ function SnackEditForm() {
         <input
           id="fiber"
           value={snack.fiber}
-          type="text"
+          type="number"
           placeholder="Name"
-          onChange={handleTextChange}
+          onChange={handleNumberChange}
         />
         <label>Protein</label>
         <input
           id="protein"
           value={snack.protein}
-          type="protein"
+          type="number"
           placeholder="Protein"
           onChange={handleNumberChange}
         />
@@ -87,9 +87,9 @@ function SnackEditForm() {
         <input
           id="added_sugar"
           value={snack.added_sugar}
-          type="added_sugar"
+          type="number"
           placeholder="Added_Sugar"
-          onChange={handleTextChange}
+          onChange={handleNumberChange}
         />
         <br />
         <br></br>

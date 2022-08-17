@@ -33,7 +33,9 @@ function SnackDetails() {
 
   return (
     <div>
+    {/* is_healthy heart */}
          <h3>{snack.name}</h3>
+         <h3>{snack.img}</h3>
       <h3>{snack.fiber}</h3>
       <h3>${snack.protein}</h3>
       <h3>{snack.added_sugar}</h3>
