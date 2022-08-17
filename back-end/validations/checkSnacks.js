@@ -8,10 +8,6 @@ const checkName = (req, res, next) => {
     }
 }
 
-// const checkImage = (req, res, next) => {
-//     const validExtensions = ['jpg','png', 'gif', 'bmp'];
-//     const image = req.body.image
-//     console.log(image.substring(image.length-3))
-// }
 
-module.exports = {checkName}
+
+module.exports = {checkName, checkImg}
