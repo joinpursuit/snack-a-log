@@ -36,7 +36,7 @@ describe("snacks", () => {
       it("with correct id - fetches the correct snack", async () => {
         const response = await request(snacks).get("/snacks/1");
         const parsedRes = JSON.parse(response.text);
-        console.log(response)
+        // console.log(response)
 
         // expect(parsedRes.success).toBe(true);
         expect(parsedRes.id).toEqual(1);

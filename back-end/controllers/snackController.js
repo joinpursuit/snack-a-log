@@ -27,7 +27,7 @@ snacks.get("/:id", async (req, res) => {
     if(snack.id){
         res.status(200).json(snack);
     } else {
-        res.status(404).json({ error: "can't find snack" })
+        res.status(404).json({ payload: "not found" , success: false })
     }
 })
 
@@ -48,7 +48,7 @@ snacks.delete("/:id", async (req, res) => {
         res.status(200).json({payload: deletedSnack,
             success: true})
     } else {
-        res.status(404).json("can't find snack")
+        res.status(404).json({ payload: "" , success: false })
     }
 })
 
