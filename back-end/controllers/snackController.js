@@ -1,4 +1,3 @@
-const { response } = require('express');
 const express = require('express')
 const snacks = express.Router();
 
@@ -16,12 +15,13 @@ const {
   validateImage
 } = require ('../validations/checkSnacks.js')
 
-snacks.get('/', async(req,res)=>{
+snacks.get('/', async(request,response)=>{
   const allSnacks = await getAllSnacks();
+  console.log(allSnacks)
   if(allSnacks[0]){
-    res.status(200).json(allSnacks);
+    response.status(200).json(allSnacks);
   }else{
-    res.status(500).json({error: 'server error (line 18)! Snack Controller'})
+    response.status(500).json({error: 'server error (line 18)! Snack Controller'})
   }
 })
 
@@ -56,7 +56,7 @@ snacks.delete('/:id', async(req,res)=>{
   }
 })
 
-snacks.put('/:id', validatedImage, checkBooleen, checkName, async(req,res)=>{
+snacks.put('/:id', validateImage, checkBooleen, checkName, async(req,res)=>{
   const {id} = req.params
 
   const updatedSnack = await updatedSnack(res.body, id);

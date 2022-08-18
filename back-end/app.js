@@ -6,9 +6,10 @@ const app = express();
 
 const snackController = require('./controllers/snackController')
 
-
 app.use(cors())
 app.use(express.json())
+
+
 
 app.use('/snacks', snackController);
 
