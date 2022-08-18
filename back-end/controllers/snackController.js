@@ -15,6 +15,7 @@ const {
   validateImage
 } = require ('../validations/checkSnacks.js')
 
+// INDEX Route - DONE 
 snacks.get('/', async(request,response)=>{
   const allSnacks = await getAllSnacks();
   console.log(allSnacks)
@@ -25,10 +26,10 @@ snacks.get('/', async(request,response)=>{
   }
 })
 
-snacks.get('/:id', async(req,res)=>{
-  const {id} = res.params
+// SHOW Route - DONE
+snacks.get("/:id", async (req,res) => {
+  const { id } = req.params
   const snack = await getSnack(id);
-
   if(snack.id){
     res.json(snack);
   }else{
