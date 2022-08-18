@@ -49,8 +49,6 @@ snacks.post("/", async (req, res) => {
     }
 });
 
-
-
 snacks.delete("/:id", async (req, res) => {
     const { id } = req.params;
     const deletedSnack = await deleteSnack(id);
