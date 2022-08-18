@@ -39,7 +39,7 @@ snacks.get("/:id", async (req, res) => {
   }
 });
 
-// ERROR UGH ----- GOING TO BED
+// NEW Route - DONE
 snacks.post("/", checkName, checkBooleen, validateImage, async (req, res) => {
   try {
     const snack = await createSnack(req.body);
@@ -67,7 +67,7 @@ snacks.put("/:id", validateImage, checkBooleen, checkName, async (req, res) => {
   if (updatedSnack.id) {
     res.status(200).json(updatedSnack);
   } else {
-    res.status(422).json({ error: "Snack not updated (line59)" });
+    res.status(422).json({ error: "Snack not updated (line62)" });
   }
 });
 
