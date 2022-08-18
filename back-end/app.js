@@ -1,11 +1,4 @@
-// DEPENDENCIES
 
-// CONFIGURATION
-
-
-// MIDDLEWARE
-
-// ROUTES
 
 const express = require('express');
 const cors = require('cors')
