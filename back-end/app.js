@@ -10,12 +10,14 @@ app.use(cors());
 app.use(express.json());
 
 // ROUTES
-const snacksController = require("./controllers/snacksController.js");
+const snacksController = require("./controllers/snackController.js");
 
 
 app.get('/', (req, res) => {
-    res.send("Welcome to snack a log")
+    res.send("Get Snack'n at Snack-a-log!")
 });
+
+app.use('/snacks', snacksController)
 
 app.get("*", (req, res) => {
     res.status(404).send("page not found")
