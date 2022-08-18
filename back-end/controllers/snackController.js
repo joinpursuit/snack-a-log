@@ -5,10 +5,13 @@ const {
     getAllSnacks,
     getSnack,
     createSnack,
-    deleteSnack
+    deleteSnack,
+    updateSnack
 } = require("../queries/snacks");
 
 const { checkName} = require("../validations/checkSnacks");
+
+const confirmHealth = require("../confirmHealth");
 
 
 snacks.get("/", async (req,res) => {
@@ -31,10 +34,13 @@ snacks.get("/:id", async (req, res) => {
     }
 })
 
-snacks.post("/", checkName, async (req, res) => {
+snacks.post("/", async (req, res) => {
+    let { name, fiber, protein, added_sugar, is_healthy, image } = req.body;
     try {
-        const newSnack = await createSnack(req.body);
-        res.json({payload: newSnack,
+        const healthySnack = confirmHealth(req.body);
+        const verifiedSnack = await createSnack({ name, fiber, protein, added_sugar, healthySnack, image })
+
+        res.json({payload: verifiedSnack,
             success: true})
     } catch (err) {
         return(err)
@@ -49,6 +55,16 @@ snacks.delete("/:id", async (req, res) => {
             success: true})
     } else {
         res.status(404).json({ payload: "" , success: false })
+    }
+})
+
+snacks.put("/:id", async (req,res) => {
+    const { id } = req.params;
+    const updatedSnack = await updateSnack(req.body, id);
+    if(updatedSnack.id) {
+        res.status(200).json({ payload: updatedSnack, success: true })
+    } else {
+        res.status(422).json({ payload: "include all fields" , success: false })
     }
 })
 
