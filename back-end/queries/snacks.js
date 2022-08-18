@@ -21,15 +21,35 @@ const getSnack = async(id)=>{
   }
 }
 
-const createSnack = async(song)=>{
+// CREATE Route - DONE
+const createSnack = async (snack)=>{
   const {name, fiber, protein, added_sugar, is_healthy, image} = snack
 
   try{
-    const newSnack = await db.one("INSERT INTO snacks(name, fiber, protein, added_sugar, is_healthy, image) VALUES ($1, $2, $3, $4, $5, $6 ) RETURNING *",[name, fiber, protein, added_sugar, is_healthy, image])
+    const newSnack = await db.one(
+      "INSERT INTO snacks (name, fiber, protein, added_sugar, is_healthy, image) VALUES ($1, $2, $3, $4, $5, $6 ) RETURNING *",
+      [name, fiber, protein, added_sugar, is_healthy, image])
+      console.log("create successful");
     return newSnack
   }catch(error){
+    console.log("create unsuccessful", error);
     return error
   }
+}
+
+const updateSnack = async (snack,id) => {
+  // const {name, fiber, protein, added_sugar, is_healthy, image} = snack
+  try{
+    const updatedSnack = await db.one(
+      "UPDATE snacks SET name=$1, fiber=$2, protein=$3, added_sugar=$4, is_healthy=$5, image=$6  WHERE id=7 RETURNING *",
+      [snack.name, snack.fiber, snack.protein, snack.added_sugar, snack.is_healthy, snack.image, id])
+      console.log(updatedSong)
+    return updatedSnack
+  }catch(error){
+    console.log("NO UPDATE")
+
+    return error
+  };
 }
 
 const deleteSnack = async(id)=>{
@@ -41,15 +61,6 @@ const deleteSnack = async(id)=>{
   }
 }
 
-const updateSnack = async(song,id)=>{
-  const {name, fiber, protein, added_sugar, is_healthy, image} = snack
-  try{
-    const updatedSnack = await db.one("UPDATE snacks SET name = $1, fiber = $2, protein = $3, added_sugar = $4, is_healthy = $5, image = $6 RETURNING *",[name, fiber, protein, added_sugar, is_healthy, image])
-    return updatedSnack
-  }catch(error){
-    return error
-  };
-}
 
 module.exports = {
   getAllSnacks,
