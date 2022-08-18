@@ -19,7 +19,7 @@ const checkBooleen = (request, response, next)=>{
 }
 
 const validateImage = (request, response, next)=>{
-  if(request.bidy.image.substring(0,7)=== 'http://' || request.bidy.image.substring(0,8)=== 'https://'){
+  if(request.body.image.substring(0,7)=== 'http://' || request.body.image.substring(0,8)=== 'https://'){
     console.log('Url checks out! (Line21)')
   }else{
     response.status(400).json({error: "URL doesnt match http:// or https://"})
