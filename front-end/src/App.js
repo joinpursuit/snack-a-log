@@ -24,11 +24,11 @@ function App() {
     <NavBar />
     <main>
       <Routes>
-        {/* <Route path='/' element={<Home />} /> */}
+        <Route path='/' element={<Home />} />
         <Route path='/snacks' element={<Snacks />} />
-        {/* <Route path='snacks/:index' element={<Snack />}/> */}
-        {/* <Route path='snacks/:index/edit' element={<SnackEditForm />}/> */}
-        {/* <Route path='/snacks/new' element={<SnackNewForm/>}/> */}
+        <Route path='snacks/:index' element={<SnackDetails />}/>
+        <Route path='snacks/:index/edit' element={<SnackEditForm />}/>
+        <Route path='/snacks/new' element={<SnackNewForm/>}/>
         {/* <Route path='*' element={<FourOFour />}/> */}
       </Routes>
     </main>

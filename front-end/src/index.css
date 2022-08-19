@@ -1,0 +1,33 @@
+.navbar {
+    background-image: "/Users/kenyettagriffin/Desktop/Module 4/Kenyetta_Transaction_react/public/istockphoto-468973723-612x612.jpg";
+    background-color: black;
+    color: orange;
+    height: 150px;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    margin-left: 25px;
+    margin: auto;
+  }
+
+  .new-button {
+    background: black;
+    border-color: orange;
+    border-width: 200px;
+    border: 25px solid orange;
+    justify-content: end;
+    margin-top: 10px;
+    margin-left: 75px;
+    margin-right: 25px;
+    border: 1px solid;
+    font-style: bold;
+    height: 50px;
+    width: 200px;
+  }
+  h1{
+    margin-left: 50px;
+  }
+
+  body{
+    background-image: url("./Components/Images/Image1.jpeg");
+  }
