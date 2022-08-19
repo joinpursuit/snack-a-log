@@ -2,12 +2,20 @@ import React from 'react'
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import Index from "./Pages/Index.js"
-import Show from "./Pages/Show.js"
-import Edit from  "./Pages/Edit.js"
-import New from  "./Pages/New.js"
+// import Index from "./Pages/Index.js"
+// import Show from "./Pages/Show.js"
+// import Edit from  "./Pages/Edit.js"
+// import New from  "./Pages/New.js"
+
+
 
 import NavBar from './Components/NavBar.js';
+import Home from './Components/Home.js'
+import Snack from './Components/Snack.js'
+import Snacks from './Components/Snacks'
+import SnackNewForm from './Components/SnackNewForm.js'
+import SnackEditForm from './Components/SnackEditForm.js'
+import SnackDetails from './Components/SnackDetails.js'
 
 function App() {
   return (
@@ -17,10 +25,10 @@ function App() {
     <main>
       <Routes>
         {/* <Route path='/' element={<Home />} /> */}
-        <Route path='/snacks' element={<Index />} />
-        <Route path='snacks/:index' element={<Show />}/>
-        <Route path='snacks/:index/edit' element={<Edit />}/>
-        <Route path='/snacks/new' element={<New />}/>
+        <Route path='/snacks' element={<Snacks />} />
+        {/* <Route path='snacks/:index' element={<Snack />}/> */}
+        {/* <Route path='snacks/:index/edit' element={<SnackEditForm />}/> */}
+        {/* <Route path='/snacks/new' element={<SnackNewForm/>}/> */}
         {/* <Route path='*' element={<FourOFour />}/> */}
       </Routes>
     </main>

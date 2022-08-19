@@ -13,7 +13,7 @@ function SnackEditForm() {
 
     const navigate = useNavigate;
 
-    const [snack, setSnacks] = useState({
+    const [snack, setSnack] = useState({
         name: "",
         fiber: "",
         protein: "",
@@ -24,7 +24,7 @@ function SnackEditForm() {
       useEffect(() => {
         axios
           .get(`${API_URL}/snacks/${index}`)
-          .then((res) => setSnacks(res.data))
+          .then((res) => setSnack(res.data))
           .catch((error) => console.error(error));
       }, [index]);
 
@@ -33,14 +33,14 @@ function SnackEditForm() {
         axios
           .put(`${API_URL}/snacks/${index}`,snack)
           .then((res) => {
-            setSnacks(res.data);
+            setSnack(res.data);
             navigate(`/snacks/${index}`);
           })
           .catch((error) => console.error(error));
       };
 
       const handleTextChange = (event) => {
-        setSnacks({ ...snack, [event.target.id]: event.target.value });
+        setSnack({ ...snack, [event.target.id]: event.target.value });
       };
     
       const handleNumberChange = (event) => {

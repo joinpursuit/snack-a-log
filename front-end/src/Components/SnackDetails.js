@@ -21,7 +21,7 @@ function SnackDetails() {
           .catch((error) => {
             navigate("/not-found");
           });
-      }, [index,]);
+      }, [index]);
 
       const handleDelete = () => {
         axios

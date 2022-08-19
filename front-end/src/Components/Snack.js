@@ -10,7 +10,7 @@ function Snack({ snack, index }) {
         <Link to={`/snacks/${index}`}>{snack.name} </Link>
       </p>
 
-      <p>{song.protein}</p>
+      <p>{snack.protein}</p>
 
       {/* <li>{transaction.date}<br></br>{transaction.item_name}<br></br>{transaction.amount}</li> */}
     </div>

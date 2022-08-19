@@ -5,7 +5,7 @@ import Snack from "../Components/Snack.js"
 import axios from "axios";
 
 
-const API_URL = process.env.REACT_APP_API_URL;
+const API = process.env.REACT_APP_API_URL;
 
 
 
@@ -13,26 +13,27 @@ function Snacks() {
 
     const [snacks, setSnacks] = useState([]);
 
+    
+
     useEffect(() => {
+
         axios
-          .get(`${API_URL}/snacks`)
+          .get(`${API}/snacks`)
           .then((res) => setSnacks(res.data))
           .catch((err) => console.error(err));
       }, []);
-
+console.log(snacks)
 
   return (
     <div>
     <section>
     {snacks.map((snack, index) => {
-            return (
-              <Snack
-                key={index}
-                snack={snack}
-                index={index}
-              />
-            );
-          })}
+      return(
+        
+        <Snack  index={index} snack={snack}/>
+        
+      )
+    })}
     </section>
     </div>
   )
