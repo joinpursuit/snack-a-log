@@ -11,7 +11,8 @@
     font-family: VT323-Regular;
     text-decoration: none; */ 
 
-    background: #261da4;
+    /* background: #261da4; */
+    background: #0E0F19;
     display: flex;
      justify-content: space-between;
      align-items: center;
@@ -25,4 +26,10 @@
    .New {
     border: 5px solid #4e4b4b;
     text-align: center;
+  }
+  body {
+    margin: 0;
+    background-color: #708B75;
+    /* background-color: #a5afa8; */
+    background-image: url("https://www.transparenttextures.com/patterns/fake-luxury.png"); 
   }
