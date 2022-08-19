@@ -1,3 +1,4 @@
+const snacks = require("../controllers/snackController.js");
 const db = require("../db/dbConfig.js");
 
 const getAllSnacks = async () => {
@@ -29,9 +30,23 @@ const deleteSnack = async (id) => {
     return err;
   }
 };
+ 
+const createSnack = async (snack) => {
+  const { name, fiber, protein, added_sugar, is_healthy, image } = snack;
+  try {
+    const newSnack = await db.one(
+      "INSERT INTO snacks (name, fiber, protein, added_sugar, is_healthy, image)VALUES ($1, $2, $3, $4, $5, $6) RETURNING *",
+      [name, fiber, protein, added_sugar, is_healthy, image]
+    );
+    return newSnack;
+  } catch (error) {
+    return error;
+  }
+};
 
 module.exports = {
   getAllSnacks,
   getSnack,
   deleteSnack,
+  createSnack,
 };
