@@ -62,7 +62,7 @@ snacks.delete("/:id", async (req, res) => {
 snacks.put("/:id", validateImage, checkBooleen, checkName, async (req, res) => {
   const { id } = req.params;
   console.log(id)
-  console.log(req.body)
+  console.log(req.body,"********************")
   const updatedSnack = await updateSnack(req.body, id);
   if (updatedSnack.id) {
     res.status(200).json(updatedSnack);
