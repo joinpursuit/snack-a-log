@@ -1,7 +1,8 @@
 DROP DATABASE IF EXISTS snack_a_log;
-CREATE DATABASE snack_a_log; 
 
-\c snack_a_log; 
+CREATE DATABASE snack_a_log;
+
+\c snack_a_log;
 
 CREATE TABLE snacks (
     id SERIAL PRIMARY KEY,
@@ -12,4 +13,3 @@ CREATE TABLE snacks (
     is_healthy BOOLEAN DEFAULT false,
     image TEXT 
 )
-
