@@ -1,0 +1,28 @@
+.Nav {
+
+    /* display:flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 10vh;
+    /* background: #09BC84; */
+    /* background: #9AB87A; */
+    /* background:#444B6E;
+    color: white;
+    font-family: VT323-Regular;
+    text-decoration: none; */ 
+
+    background: #261da4;
+    display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 1em;
+     box-shadow: 2px 2px 4px grey;
+     margin-bottom: 1em;
+  }
+  .Link {
+    text-decoration: none;
+   }
+   .New {
+    border: 5px solid #4e4b4b;
+    text-align: center;
+  }
