@@ -6,9 +6,9 @@ const {checkImage, checkName} = require('../validations/checkSnacks.js')
 snacks.get("/", async (req, res) => {
   const allSnacks = await getAllSnacks();
   if (allSnacks[0]) {
-    res.status(200).json(allSnacks);
+    res.status(200).json({ payload: allSnacks, success: true });
   } else {
-    res.status(500).json({ error: "server error!" });
+    res.status(500).json({ payload: "server error!", success: false });
   }
 });
 
