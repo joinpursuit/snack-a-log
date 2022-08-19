@@ -39,8 +39,8 @@ const createSnack = async (snack) => {
       [name, fiber, protein, added_sugar, is_healthy, image]
     );
     return newSnack;
-  } catch (error) {
-    return error;
+  } catch (err) {
+    return err;
   }
 };
 const updateSnack = async (snack, id) => {
