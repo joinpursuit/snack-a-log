@@ -3,15 +3,14 @@ import { Link } from "react-router-dom";
 function Snack({ snack, index }) {
   return (
     <div>
-      {/* <ul>{`/transactions/${index}`}</ul> */}
-      <p>{snack.fiber}</p>
+        <Link to={`/snacks/${index}`}>
+        <>
+      <img src={snack.image} alt={snack.name}></img>
 
-      <p>
-        <Link to={`/snacks/${index}`}>{snack.name} </Link>
-      </p>
-
-      <p>{snack.protein}</p>
-
+          <p>{snack.name}</p> 
+        </>
+          </Link>
+    
       {/* <li>{transaction.date}<br></br>{transaction.item_name}<br></br>{transaction.amount}</li> */}
     </div>
   );
