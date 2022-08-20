@@ -12,7 +12,7 @@ const getAllSnacks = async () => {
 }
 
 // SHOW Route - DONE 
-const getSnack = async(id)=>{
+const getSnack = async (id) => {
   try{
     const oneSnack = await db.one("SELECT * FROM snacks WHERE id=$1", id);
     return oneSnack

@@ -10,7 +10,7 @@ const API_URL = process.env.REACT_APP_API_URL;
 function SnackEditForm() {
 
     let { index } = useParams();
-
+console.log(index,"PPPPPPPPP")
     const navigate = useNavigate;
 
     const [snack, setSnack] = useState({

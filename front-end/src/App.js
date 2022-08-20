@@ -11,7 +11,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import NavBar from './Components/NavBar.js';
 import Home from './Components/Home.js'
-import Snack from './Components/Snack.js'
 import Snacks from './Components/Snacks'
 import SnackNewForm from './Components/SnackNewForm.js'
 import SnackEditForm from './Components/SnackEditForm.js'

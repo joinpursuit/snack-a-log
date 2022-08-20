@@ -28,7 +28,7 @@ snacks.get("/", async (request, response) => {
   }
 });
 
-// SHOW Route - 
+// SHOW Route - DONE 
 snacks.get("/:id", async (req, res) => {
   const { id } = req.params;
   const snack = await getSnack(id);

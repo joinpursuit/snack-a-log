@@ -22,7 +22,8 @@ function Snacks() {
     <div>
       <section className='snacks-index'>
         {snacks.map((snack, index) => {
-          return <Snack index={index} snack={snack} />;
+          console.log(`LINE: 25 name is ${JSON.stringify(snack)}`)
+          return <Snack snack={snack} />;
         })}
       </section>
     </div>
