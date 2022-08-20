@@ -1,5 +1,6 @@
 const checkName = (req, res, next) => {
   if (req.body.name && typeof req.body.name === "string") {
+    req.body.name = req.body.name.toLowerCase().replace(/\b\w{1}/gi, c => c.toUpperCase())
     next();
   } else {
     res.status(400).json({ error: "A valid snack name is required" });
@@ -39,6 +40,9 @@ const checkIs_Healthy = (req, res, next) => {
 };
 
 const validateImageUrl = (req, res, next) => {
+  if(!req.body.image){
+    req.body.image = "https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"
+  }
   if (
     req.body.image.substring(0, 7) === "http://" ||
     req.body.image.substring(0, 8) === "https://"

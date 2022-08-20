@@ -13,7 +13,7 @@ app.use('/snacks', snacksContoller)
 
 // ROUTES
 app.get('/', (req, res) => {
-  res.send('Welcome to the SnackBar')
+  res.send("Get Snack'n at Snack-a-log!")
 })
 
 app.get('*', (req, res) => {
