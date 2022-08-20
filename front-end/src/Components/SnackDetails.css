@@ -1,0 +1,22 @@
+.snack-details{
+  text-align: center;
+  padding-top: 3%;
+}
+.snack-detail{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 50%;
+  text-align: center;
+  margin-left: 25%;
+}
+
+.snack{
+  color:#ff4a1c;
+}
+.result{
+  color: #772014;
+}
+
+button{
+  margin: 1% 1%;
+}

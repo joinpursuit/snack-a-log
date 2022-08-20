@@ -1,11 +1,11 @@
 .orange{
-    color: orange;
+    color: #ff4a1c;
 }
 
 .navbar {
 
   background-color: black;
-  color: orange;
+  color: #ff4a1c;
   height: 150px;
   justify-content: space-between;
   align-items: center;
