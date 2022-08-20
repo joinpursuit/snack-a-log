@@ -31,3 +31,10 @@
 h1{
   margin-left: 50px;
 }
+
+.link {
+  color:#ff4a1c;
+}
+.link:hover {
+   color: #FFFF
+}
