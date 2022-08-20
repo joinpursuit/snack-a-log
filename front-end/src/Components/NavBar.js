@@ -4,7 +4,7 @@ import './NavBar.css'
 export default function NavBar() {
   return (
     <nav className="navbar">
-      <Link to="/snacks">
+      <Link to="/snacks" style={{color: '#ff4a1c'}}>
         <h1 className='orange'>SNACKS</h1>
       </Link>
 
