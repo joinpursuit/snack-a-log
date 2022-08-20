@@ -7,11 +7,10 @@ const API = process.env.REACT_APP_API_URL;
 const NewSnackForm = () => {
     const [newSnack, setNewSnack] = useState({
         name: "",
-        fiber: 0,
         protein: 0,
+        fiber: 0,
         added_sugar: 0,
         image: "",
-        
     });
     const navigate = useNavigate();
 

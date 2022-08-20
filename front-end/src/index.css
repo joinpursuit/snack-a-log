@@ -1,0 +1,22 @@
+.card{
+    text-align: center;
+    margin: 0 auto; 
+        float: none;
+        margin-bottom: 10px; 
+}
+
+nav {
+  background: #e7818c;
+ display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5rem;
+  box-shadow: 2px 2px 4px grey;
+  margin-bottom: 5rem;
+}
+
+
+a {
+  text-decoration: none;
+  color: #050436;
+}
