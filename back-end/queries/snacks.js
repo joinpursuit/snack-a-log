@@ -37,6 +37,7 @@ const createSnack = async (snack)=>{
   }
 }
 
+// UPDATE Route - DONE
 const updateSnack = async (snack,id) => {
   // const {name, fiber, protein, added_sugar, is_healthy, image} = snack
   try{
@@ -51,7 +52,7 @@ const updateSnack = async (snack,id) => {
     return error
   };
 }
-
+// DELETE Route - DONE
 const deleteSnack = async(id)=>{
   try{
     const deletedSnack = await db.one("DELETE FROM snacks WHERE id=$1 RETURNING *",id)
