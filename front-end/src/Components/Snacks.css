@@ -1,0 +1,26 @@
+.snacks-index{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 5% 5%;
+  
+}
+
+.snacks{
+  height: 300px;
+  width: 300px;
+  padding: 20px;
+  padding-bottom: 30px;
+  
+}
+
+img{
+  height: 300px;
+  width: 300px;
+  border-radius: 50%
+}
+
+p{
+  text-align: center;
+  padding-right: 25px;
+ 
+}
