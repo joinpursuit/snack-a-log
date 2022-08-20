@@ -1,12 +1,20 @@
+
+
 .card{
     text-align: center;
     margin: 0 auto; 
         float: none;
-        margin-bottom: 10px; 
+        margin-bottom: 20px; 
+        background-color: rgb(193, 173, 148);
+}
+h3{
+    text-align: center;
+    font-family: monospace;
 }
 
+
 nav {
-  background: #e7818c;
+  background: rgb(236, 80, 60);
  display: flex;
   justify-content: space-between;
   align-items: center;
@@ -14,9 +22,277 @@ nav {
   box-shadow: 2px 2px 4px grey;
   margin-bottom: 5rem;
 }
+.nav-logo {
+    height: 100px;
+  width: 300px;
+}
+
+.Nav Button {
+  margin: 5px;
+  font-size: large;
+}
+.Nav Button:hover {
+  background-color: antiquewhite;
+  color: black;
+}
 
 
-a {
+
+.Nav a {
   text-decoration: none;
-  color: #050436;
+  color: antiquewhite;
+}
+
+.Edit Button {
+  margin: 5px;
+  font-size: large;
+}
+.Edit Button:hover {
+  background-color: antiquewhite;
+  color: black;
+}
+
+.Edit h1 {
+  text-align: center;
+}
+.snack Button {
+  margin: 5px;
+  font-size: large;
+}
+.snack Button:hover {
+  background-color: antiquewhite;
+  color: black;
+}
+
+body {
+  font-size: x-large;
+  font-family: monospace;
+  background-color: bisque;
+  cursor: pointer;
+}
+
+.New Button {
+  margin: 5px;
+  font-size: large;
+}
+.New Button:hover {
+  background-color: antiquewhite;
+  color: black;
+}
+
+.New h1 {
+  text-align: center;
+}
+
+.top-note {
+  text-align: center;
+  border: 2px solid white;
+  margin-left: 300px;
+  margin-right: 300px;
+}
+
+.Home {
+  text-align: center;
+}
+
+/* ERROR PAGE START -
+https://www.codewithrandom.com/2022/08/08/simple-404-error-page-html-css/ */
+
+.page_404 {
+  padding: 40px;
+  margin: 10px;
+}
+
+.error-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.four_zero_four_bg {
+  background-image: url(https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif);
+  height: 400px;
+  background-position: center;
+}
+
+.four_zero_four_bg h1 {
+  font-size: 80px;
+}
+
+.four_zero_four_bg h3 {
+  font-size: 80px;
+}
+
+.link_404 {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  background: black;
+  margin: 20px 0;
+  display: inline-block;
+}
+
+.link_404:hover {
+    color: black;
+    text-decoration: none;
+    padding: 10px 20px;
+    background: antiquewhite;
+    margin: 20px 0;
+    display: inline-block;
+    border: 1px solid black;
+  }
+
+.contant_box_404 {
+  margin: 20px;
+}
+
+/* ERROR PAGE END */
+
+@media all and (max-width: 500px){
+.card{
+    text-align: center;
+    margin: 0 auto; 
+        float: none;
+        margin-bottom: 20px; 
+        background-color: rgb(193, 173, 148);
+}
+h3{
+    text-align: center;
+    font-family: monospace;
+}
+
+
+nav {
+  background: rgb(236, 80, 60);
+ display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5rem;
+  box-shadow: 2px 2px 4px grey;
+  margin-bottom: 5rem;
+}
+.nav-logo {
+    height: 100px;
+  width: 300px;
+}
+
+.Nav Button {
+  margin: 5px;
+  font-size: large;
+}
+.Nav Button:hover {
+  background-color: antiquewhite;
+  color: black;
+}
+
+
+
+.Nav a {
+  text-decoration: none;
+  color: antiquewhite;
+}
+
+.Edit Button {
+  margin: 5px;
+  font-size: large;
+}
+.Edit Button:hover {
+  background-color: antiquewhite;
+  color: black;
+}
+
+.Edit h1 {
+  text-align: center;
+}
+.snack Button {
+  margin: 5px;
+  font-size: large;
+}
+.snack Button:hover {
+  background-color: antiquewhite;
+  color: black;
+}
+
+body {
+  font-size: x-large;
+  font-family: monospace;
+  background-color: bisque;
+  cursor: pointer;
+}
+
+.New Button {
+  margin: 5px;
+  font-size: large;
+}
+.New Button:hover {
+  background-color: antiquewhite;
+  color: black;
+}
+
+.New h1 {
+  text-align: center;
+}
+
+.top-note {
+  text-align: center;
+  border: 3vw solid white;
+  margin-left: 300px;
+  margin-right: 300px;
+  font-size: 1vw;
+
+}
+.Home {
+  text-align: center;
+}
+
+/* ERROR PAGE START -
+https://www.codewithrandom.com/2022/08/08/simple-404-error-page-html-css/ */
+
+.page_404 {
+  padding: 40px;
+  margin: 10px;
+}
+
+.error-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.four_zero_four_bg {
+  background-image: url(https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif);
+  height: 400px;
+  background-position: center;
+}
+
+.four_zero_four_bg h1 {
+  font-size: 80px;
+}
+
+.four_zero_four_bg h3 {
+  font-size: 80px;
+}
+
+.link_404 {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  background: black;
+  margin: 20px 0;
+  display: inline-block;
+}
+
+.link_404:hover {
+    color: black;
+    text-decoration: none;
+    padding: 10px 20px;
+    background: antiquewhite;
+    margin: 20px 0;
+    display: inline-block;
+    border: 1px solid black;
+  }
+
+.contant_box_404 {
+  margin: 20px;
+}
 }
