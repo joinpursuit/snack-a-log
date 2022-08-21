@@ -6,7 +6,7 @@ import NavBar from "./Components/NavBar";
 
 import Edit from './Pages/Edit'
 import Home from './Pages/Home'
-import Error from "./Pages/Error"
+import FourOFour from "./Pages/FourOFour";
 import New from "./Pages/New"
 import Show from "./Pages/Show"
 import Index from "./Pages/Index"
@@ -22,7 +22,7 @@ function App() {
           <Route path="/snacks/new" element={<New />} />
           <Route path="/snacks/:id" element={<Show />} />
           <Route path="/snacks/:id/edit" element={<Edit />} />
-          <Route path="*" element={<Error />} />
+          <Route path="*" element={<FourOFour />} />
         </Routes>
       </Router>
     </div>
