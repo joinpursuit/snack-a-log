@@ -30,12 +30,14 @@ function SnackDetails() {
     deleteSnack();
   };
 
-  // console.log(snack.is_healthy)
+  console.log(snack)
   return (
     <>
       <article>
         <aside>
-          {snack.is_healthy ? <img src={heartSolid} alt='healthy food' /> : <img src={heartReg} alt='unhealthy food' />} {snack.name}
+          {/* {<img src={heartSolid} alt='healthy food'></img>} */}
+          {snack.is_healthy ? <img src={heartSolid} alt='healthy food' /> : <img src={heartReg} alt='unhealthy food' />} 
+          <h3>{snack.name}</h3>
         </aside>
         <div>
           <h6>Fiber: {snack.fiber}</h6>

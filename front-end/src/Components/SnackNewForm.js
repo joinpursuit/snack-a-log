@@ -13,7 +13,7 @@ function SnackNewForm() {
     fiber: "",
     protein: "",
     added_sugar: "",
-    is_healthy: false,
+    is_healthy: "",
     image: ""
   });
 
