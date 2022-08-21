@@ -14,7 +14,8 @@
   margin: auto;
 }
 
-.new-button .link {
+.new-button {
+  color:#ff4a1c;
   background: black;
   border-color: orange;
   border-width: 200px;
