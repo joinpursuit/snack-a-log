@@ -2,6 +2,9 @@
   "name": "bookmarks",
   "version": "1.0.0",
   "description": "",
+  "engines": {
+    "node": "17.02.0"
+  },
   "main": "server.js",
   "scripts": {
     "db:init": "psql -U postgres -f db/schema.sql",
