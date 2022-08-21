@@ -62,6 +62,9 @@ h4 {
 
 .HomePage {
 font-size: 100px;
+image: url('https://medium.com/@charithra/cookie-monster-in-web-960b0f7fa2d0');
 }
 
-
+.SnackNew {
+    text-align: center;
+}
