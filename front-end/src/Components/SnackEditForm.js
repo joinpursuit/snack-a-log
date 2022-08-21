@@ -9,15 +9,15 @@ const API = process.env.REACT_APP_API_URL;
 
 function SnackEditForm() {
 
-    let { index } = useParams();
-console.log(index,"PPPPPPPPP")
-    const navigate = useNavigate;
+  const navigate = useNavigate();
+  let { index } = useParams();
+    console.log(index,"PPPPPPPPP")
 
     const [snack, setSnack] = useState({
         name: "",
         fiber: "",
         protein: "",
-        added_sugar: "",
+        added_sugar: ""
       });
 
 
@@ -26,7 +26,7 @@ console.log(index,"PPPPPPPPP")
           .get(`${API}/snacks/${index}`)
           .then((res) => setSnack(res.data))
           .catch((error) => console.error(error));
-      }, [index]);
+      }, [index, API]);
 
 
       const updateSnack = () => {
