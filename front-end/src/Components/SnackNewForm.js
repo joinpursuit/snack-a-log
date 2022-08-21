@@ -146,6 +146,6 @@ function SnackNewForm() {
     </div>
   );
   
-}
+
 
 export default SnackNewForm;
