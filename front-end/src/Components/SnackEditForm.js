@@ -51,6 +51,11 @@ function SnackEditForm() {
         });
       };
       
+      const handleUrlChange = (e)=>{
+        setSnack({ ...snack, [e.target.id]: e.target.value });
+      }
+
+
       const handleSubmit = (e) => {
         e.preventDefault();
         updateSnack();
@@ -98,11 +103,13 @@ function SnackEditForm() {
          <label for="image">Enter an https:// URL:</label>
           <input
             type="url"
-            name="image"
+            name="url"
             id="image"
+            src="url"
             placeholder="https://example.com"
             pattern="https://.*"
             size="30"
+            onChange={handleUrlChange}
           />
         <br />
         <br></br>

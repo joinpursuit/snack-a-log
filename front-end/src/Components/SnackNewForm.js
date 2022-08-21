@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 
 import { useNavigate } from "react-router-dom";
-import './SnackNewForm.css'
+import "./SnackNewForm.css";
 
 const API_URL = process.env.REACT_APP_API_URL;
 
@@ -13,7 +13,7 @@ function SnackNewForm() {
     protein: "",
     added_sugar: "",
     category: "",
-    is_healthy: false
+    is_healthy: false,
   });
 
   const navigate = useNavigate();
@@ -35,14 +35,14 @@ function SnackNewForm() {
     setSnack({ ...snack, [e.target.id]: Number(e.target.value) });
   };
 
+  const handleUrlChange = (e) => {
+    setSnack({ ...snack, [e.target.id]: e.target.value });
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     addSnack();
   };
-
-const handleUrlChange = (e)=>{
-  setSnack({ ...snack, [e.target.id]: e.target.value });
-}
 
   return (
     <div className="new">
@@ -57,7 +57,7 @@ const handleUrlChange = (e)=>{
             placeholder="Name"
             onChange={handleTextChange}
           />
-          
+
           <label>Fiber</label>
           <input
             id="fiber"

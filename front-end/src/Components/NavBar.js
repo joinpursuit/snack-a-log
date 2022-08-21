@@ -8,6 +8,11 @@ export default function NavBar() {
         <h1 className='orange'>SNACKS</h1>
       </Link>
 
+      <Link to="/">
+      <button className="home-button">HOME</button>
+        </Link>
+
+
         <Link to="/snacks/new">
       <button className="new-button">NEW SNACK</button>
         </Link>
