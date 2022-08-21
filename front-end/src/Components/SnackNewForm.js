@@ -40,6 +40,10 @@ function SnackNewForm() {
     addSnack();
   };
 
+const handleUrlChange = (e)=>{
+  setSnack({ ...snack, [e.target.id]: e.target.value });
+}
+
   return (
     <div className="new">
       <h1>New Snack</h1>
@@ -83,9 +87,11 @@ function SnackNewForm() {
             type="url"
             name="url"
             id="image"
+            src="url"
             placeholder="https://example.com"
             pattern="https://.*"
             size="30"
+            onChange={handleUrlChange}
           />
           <br />
           <br></br>
