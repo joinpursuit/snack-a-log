@@ -28,7 +28,7 @@ function SnackEditForm() {
     axios.get(`${API}/snacks/${id}`)
       .then(response => setSnack(response.data.payload))
       .catch(error => console.error(error))
-  }, []);
+  }, [id]);
   const updateSnack = () => {
     axios.put(`${API}/snacks/${id}`, snack)
       .then(response => {
