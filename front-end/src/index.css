@@ -1,6 +1,6 @@
 body {
   font-size: x-large;
-  font-family: monospace;
+  font-family: Overlock;
   background-color: bisque;
   cursor: pointer;
 }
@@ -81,3 +81,25 @@ https://www.codewithrandom.com/2022/08/08/simple-404-error-page-html-css/ */
 }
 
 /* ERROR PAGE END */
+
+/* HOW TO CENTER REACT BOOTSTRAP CARDS */
+/* https://stackoverflow.com/questions/71737087/how-to-center-a-card-group-with-react-bootstrap */
+
+.Snacks {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+.Snack{
+  padding: 15px;
+  margin: 10px;
+  text-align: center;
+}
+
+.health img{
+  width: 30px;
+}
+

@@ -20,7 +20,6 @@ const confirmHealth = (snack) => {
 
  return false;
 
-
 };
 
 module.exports = confirmHealth;
