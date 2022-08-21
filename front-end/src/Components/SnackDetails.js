@@ -52,6 +52,9 @@ function SnackDetails() {
       <img src={snack.image} alt={snack.name} />
       </section>
       <section className="snack-info">
+
+      {/* created a ternary if the value is greater than 1 then gram is grams */}
+      
       {snack.fiber > 1 ? <h3>Snack Fiber: <br></br><span className='result'>{snack.fiber} grams</span></h3> : <h3>Snack Fiber: <br></br><span className='result'>{snack.fiber} gram</span></h3>}
       {snack.protein > 1 ? <h3>Snack Protein:<br></br> <span className='result'>{snack.protein} grams</span></h3> : <h3>Snack Protein: <br></br><span className='result'>{snack.protein} gram</span></h3>}
       {snack.added_sugar > 1 ? <h3>Snack Added Sugar: <br></br> <span className ='result'>{snack.added_sugar} grams</span></h3> : <h3>Snack Added Sugar: <br></br><span className='result'>{snack.added_sugar} gram</span></h3>}
