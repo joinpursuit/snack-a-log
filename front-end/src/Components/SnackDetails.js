@@ -39,6 +39,9 @@ function SnackDetails() {
       .then((response) => navigate(`/snacks`))
       .catch((error) => console.error("catch", error));
   };
+  handleDelete =()=>{
+    deleteSnack()
+  }
 
   
   return (
@@ -53,8 +56,7 @@ function SnackDetails() {
       </section>
       <section className="snack-info">
 
-      {/* created a ternary if the value is greater than 1 then gram is grams */}
-      
+      {/* created a ternary if the value is greater than 1 then gram is grams*/}
       {snack.fiber > 1 ? <h3>Snack Fiber: <br></br><span className='result'>{snack.fiber} grams</span></h3> : <h3>Snack Fiber: <br></br><span className='result'>{snack.fiber} gram</span></h3>}
       {snack.protein > 1 ? <h3>Snack Protein:<br></br> <span className='result'>{snack.protein} grams</span></h3> : <h3>Snack Protein: <br></br><span className='result'>{snack.protein} gram</span></h3>}
       {snack.added_sugar > 1 ? <h3>Snack Added Sugar: <br></br> <span className ='result'>{snack.added_sugar} grams</span></h3> : <h3>Snack Added Sugar: <br></br><span className='result'>{snack.added_sugar} gram</span></h3>}
@@ -67,7 +69,7 @@ function SnackDetails() {
       <Link to={`/snacks/${index}/edit`}>
         <button className="edit-button">Edit</button>
       </Link>
-      <button className="delete-button" onClick={()=>{deleteSnack}}>
+      <button className="delete-button" onClick={handleDelete}>
         Delete
       </button>
     </div>
