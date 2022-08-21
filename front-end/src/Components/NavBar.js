@@ -5,7 +5,7 @@ export default function NavBar() {
     return (
         <div className='NavBar'>
             <nav>
-                <Link to='/'>Snack-a-thon</Link>
+                <Link to='/' className='Snack_a_thon'>Snack-a-thon</Link>
                 <button className='snackButton'><Link to='/snacks'>Snacks</Link></button>
                 <button className='newButton'><Link to='/snacks/new'>New Snacks</Link> </button>
             </nav>

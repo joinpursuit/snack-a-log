@@ -27,7 +27,7 @@ function SnackDetails() {
     };
 
   return (
-    <article>
+    <article className="SnackDetails">
         <aside>
             <h4>the snack health</h4>
             <HeartHealth  snackHealth={snack}/>
