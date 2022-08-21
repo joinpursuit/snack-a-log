@@ -21,7 +21,7 @@ const SnackDetails = () => {
     const handleDelete = () => {
         axios
             .delete(`${API}/snacks/${id}`)
-            .then((response) => navigate(`/snaks`))
+            .then((response) => navigate(`/snacks`))
             .catch((error) => console.log(error));
     };
 

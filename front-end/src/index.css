@@ -1,27 +1,26 @@
-.card{
-    text-align: center;
-    margin: 0 auto; 
-        float: none;
-        margin-bottom: 20px; 
-        background-color: rgb(193, 173, 148);
+.card {
+  text-align: center;
+  margin: 0 auto;
+  float: none;
+  margin-bottom: 20px;
+  background-color: rgb(193, 173, 148);
 }
-h3{
-    text-align: center;
-    font-family: monospace;
+h3 {
+  text-align: center;
+  font-family: monospace;
 }
-
 
 nav {
   background: rgb(236, 80, 60);
- display: flex;
-  justify-content: space-between;
+  display: flex;
   align-items: center;
   padding: 5rem;
   box-shadow: 2px 2px 4px grey;
   margin-bottom: 5rem;
+  justify-content: space-evenly;
 }
 .nav-logo {
-    height: 100px;
+  height: 100px;
   width: 300px;
 }
 
@@ -129,14 +128,14 @@ https://www.codewithrandom.com/2022/08/08/simple-404-error-page-html-css/ */
 }
 
 .link_404:hover {
-    color: black;
-    text-decoration: none;
-    padding: 10px 20px;
-    background: antiquewhite;
-    margin: 20px 0;
-    display: inline-block;
-    border: 1px solid black;
-  }
+  color: black;
+  text-decoration: none;
+  padding: 10px 20px;
+  background: antiquewhite;
+  margin: 20px 0;
+  display: inline-block;
+  border: 1px solid black;
+}
 
 .contant_box_404 {
   margin: 20px;
@@ -155,13 +154,12 @@ https://www.codewithrandom.com/2022/08/08/simple-404-error-page-html-css/ */
   flex-wrap: wrap;
 }
 
-.Snack{
+.Snack {
   padding: 15px;
   margin: 10px;
   text-align: center;
 }
 
-.health img{
+.health img {
   width: 30px;
 }
-
