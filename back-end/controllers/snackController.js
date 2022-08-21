@@ -3,7 +3,7 @@ const snacks = express.Router();
 const confirmHealth = require("../confirmHealth.js");
 const checkName = require('../validations/checkName.js');
 
-//QUERIES
+//QUERIES//
 const {
   getAllSnacks,
   getSnack,
