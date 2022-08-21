@@ -17,14 +17,6 @@ function SnackDetails() {
       .catch((err) => console.error(err));
   }, [index, navigate, API]);
 
-  //     .then((res) => {
-  //       setSnack(res.data);
-  //     })
-  //     .catch((error) => {
-  //       navigate("/not-found");
-  //     });
-  // }, [index]);
-
   const deleteSnack = () => {
     axios
       .delete(`${API}snacks/${index}`)

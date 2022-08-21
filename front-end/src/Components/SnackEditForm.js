@@ -4,7 +4,7 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 
 import axios from "axios";
 
-const API_URL = process.env.REACT_APP_API_URL;
+const API = process.env.REACT_APP_API_URL;
 
 
 function SnackEditForm() {
@@ -23,7 +23,7 @@ console.log(index,"PPPPPPPPP")
 
       useEffect(() => {
         axios
-          .get(`${API_URL}/snacks/${index}`)
+          .get(`${API}/snacks/${index}`)
           .then((res) => setSnack(res.data))
           .catch((error) => console.error(error));
       }, [index]);
@@ -31,7 +31,7 @@ console.log(index,"PPPPPPPPP")
 
       const updateSnack = () => {
         axios
-          .put(`${API_URL}/snacks/${index}`,snack)
+          .put(`${API}/snacks/${index}`,snack)
           .then((res) => {
             setSnack(res.data);
             navigate(`/snacks/${index}`);
@@ -54,6 +54,9 @@ console.log(index,"PPPPPPPPP")
         e.preventDefault();
         updateSnack();
       };
+
+
+
   return (
     <div className="edit">
 <fieldset>
