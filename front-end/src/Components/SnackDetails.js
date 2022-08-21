@@ -39,7 +39,7 @@ function SnackDetails() {
       .then((response) => navigate(`/snacks`))
       .catch((error) => console.error("catch", error));
   };
-  handleDelete =()=>{
+  const handleDelete =()=>{
     deleteSnack()
   }
 
