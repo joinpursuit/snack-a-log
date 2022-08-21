@@ -2,6 +2,8 @@ import React from 'react'
 import axios from "axios"
 import { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
+import heartSolid from "../assets/heart-solid.png";
+import heartReg from "../assets/heart-regular.png";
 
 function SnackDetails() {
   const [snack, setSnack] = useState([]);
@@ -14,6 +16,7 @@ function SnackDetails() {
       setSnack(response.data);
     });
   }, [id, navigate, API]);
+
   const deleteSnack = () => {
     axios
       .delete(`${API}/snacks/${id}`)
@@ -22,42 +25,45 @@ function SnackDetails() {
       })
       .catch((c) => console.error("catch", c));
   };
+
   const handleDelete = () => {
     deleteSnack();
   };
+
+  // console.log(snack.is_healthy)
   return (
     <>
       <article>
         <aside>
-          {snack.is_healthy ? <img src='../heart-solid.png' alt='healthy food'></img> : <img src='../heart-regular.png' alt='unhealthy food'></img>} {snack.name}
+          {snack.is_healthy ? <img src={heartSolid} alt='healthy food' /> : <img src={heartReg} alt='unhealthy food' />} {snack.name}
         </aside>
         <div>
-                  <h6>Fiber: {snack.fiber}</h6>
+          <h6>Fiber: {snack.fiber}</h6>
         </div>
         <div>
-               <h6>Protein: {snack.protein}</h6>
+          <h6>Protein: {snack.protein}</h6>
         </div>
-   <div>
-            <h6>Added Sugar: {snack.added_sugar}</h6>
-   </div>
-   <div>
-            <img src={snack.image} alt={snack.name}></img>
-   </div>
-          <div>
-            <Link to={`/snacks`}>
-              <button>Back</button>
-            </Link>
-          </div>
-          <div>
-            <Link to={`/snacks/${snack.id}/edit`}>
-              <button>Edit</button>
-            </Link>
-          </div>
-          <div>
-            <button onClick={handleDelete}>Delete</button>
-          </div>
+        <div>
+          <h6>Added Sugar: {snack.added_sugar}</h6>
+        </div>
+        <div>
+          <img src={snack.image} alt={snack.name}></img>
+        </div>
+        <div>
+          <Link to={`/snacks`}>
+            <button>Back</button>
+          </Link>
+        </div>
+        <div>
+          <Link to={`/snacks/${snack.id}/edit`}>
+            <button>Edit</button>
+          </Link>
+        </div>
+        <div>
+          <button onClick={handleDelete}>Delete</button>
+        </div>
       </article>
-    
+
     </>
   )
 }

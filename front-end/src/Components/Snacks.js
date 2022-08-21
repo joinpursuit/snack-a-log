@@ -10,7 +10,7 @@ function Snacks() {
     axios
       .get(`${API}/snacks`)
       .then((response) => setSnacks(response.data.payload))
-      .catch((c) => console.warn("catch", c));
+      .catch((c) => console.log(c));
   }, []);
 
   console.log(snacks)
@@ -24,7 +24,7 @@ function Snacks() {
               <article>
                 <h4>{snack.name}</h4>
                 <div>
-                  <img src={`${snack.image}`} alt={snack.is_healthy ? "healthy food" : "unhealthy food"}></img>
+                  <span><img src={`${snack.image}`} alt={snack.is_healthy ? "healthy food" : "unhealthy food"}></img></span>
                 </div>
               </article>
             </a>

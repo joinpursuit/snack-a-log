@@ -22,7 +22,7 @@ function SnackEditForm() {
       .put(`${API}/snacks/${id}`, updatedSnack)
       .then(
         () => {
-          navigate(`/snacks/${id}`);
+          navigate(`/snacks`);
         },
         (error) => console.error(error)
       )
@@ -34,17 +34,17 @@ function SnackEditForm() {
   };
 
   useEffect(() => {
-    axios.get(`${API}/snacks/${id}`)
-      .then(
-        (response) => setSnack(response.data.payload),
-        (error) => navigate(`*`)
-      );
+    axios.get(`${API}/snacks/${id}`).then(
+      (response) => setSnack(response.data),
+      (error) => navigate(`*`)
+    );
   }, [id, navigate]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
     updateSnack(snack, id);
   };
+  
   return (
     <div className="Edit">
       <form onSubmit={handleSubmit}>
@@ -60,18 +60,21 @@ function SnackEditForm() {
         <input
           id="fiber"
           type="number"
+          value={snack.fiber}
           onChange={handleTextChange}
         />
         <label htmlFor="protein">Protein:</label>
         <input
           id="protein"
           type="number"
+          value={snack.protein}
           onChange={handleTextChange}
         />
         <label htmlFor="added_sugar">Added Sugar:</label>
         <input
           id="added_sugar"
           type="number"
+          value={snack.added_sugar}
           onChange={handleTextChange}
         />
         <label htmlFor="image">Image:</label>
@@ -79,6 +82,7 @@ function SnackEditForm() {
           id="image"
           type="text"
           value={snack.image}
+          placeholder="https://....."
           onChange={handleTextChange}
         />
         <br />

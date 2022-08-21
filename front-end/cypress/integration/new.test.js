@@ -52,4 +52,4 @@ describe("The New page", () => {
         cy.get("span img").should("have.attr", "alt", "unhealthy food");
       });
   });
-});
+})});

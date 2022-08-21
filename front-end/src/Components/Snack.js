@@ -5,11 +5,11 @@ function Snack({snack}) {
   return (
     <tr>
       <td>
-        {snack.is_healthy ? (
+        {/* {snack.is_healthy ? (
           <span>♥️</span>
         ) : (
           <span>&nbsp; &nbsp; &nbsp;</span>
-        )}
+        )} */}
       </td>
       <td>
         <Link to={`/snacks/${snack.id}`}>{snack.name}</Link>

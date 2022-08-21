@@ -69,8 +69,9 @@ function SnackNewForm() {
         <label htmlFor="image">Image:</label>
         <input
           id="image"
-          type="file"
+          type="text"
           value={snack.image}
+          placeholder="https://....."
           onChange={handleTextChange}
         />  
         <br />
