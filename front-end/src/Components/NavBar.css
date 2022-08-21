@@ -14,7 +14,7 @@
   margin: auto;
 }
 
-.new-button {
+.new-button .link {
   background: black;
   border-color: orange;
   border-width: 200px;
@@ -22,7 +22,7 @@
   justify-content: end;
   margin-top: 10px;
   margin-left: 75px;
-  margin-right: 25px;
+  margin-right: 30px;
   border: 1px solid;
   font-style: bold;
   height: 50px;
