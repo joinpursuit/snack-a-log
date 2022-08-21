@@ -3,7 +3,8 @@ import SnackDetails from '../Components/SnackDetails';
 
 function Show() {
   return (
-    <div>Show
+    <div>
+      <h2>Show</h2>
       <SnackDetails />
     </div>
   )

@@ -3,7 +3,7 @@ body {
 }
 
 main {
-    width: 90px;
+    width: auto;
     margin: 0;
 }
 
@@ -43,4 +43,9 @@ h4 {
 
 .Snacks img {
     width: 150px;
+}
+
+.Snack h4 img {
+    width: 10px;
+    height: auto;
 }
