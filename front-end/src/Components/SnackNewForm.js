@@ -25,7 +25,7 @@ function SnackNewForm() {
   };
 
   const handleCheckboxChange = () => {
-    setSnack({ ...snack, isHealthy:}!snack.isHealthy);
+    setSnack({...snack, isHealthy:!snack.isHealthy});
   };
 
   const handleSubmit = (event) => {
