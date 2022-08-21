@@ -9,7 +9,7 @@ const Snack = ({ snack }) => {
         <Link to={`/snacks/${id}`}>
           <img src={image} alt={name} />
           <h4>
-            <HeartHealth snackHealth={is_healthy} /> {name}
+            <span><HeartHealth snackHealth={is_healthy} /> </span>{name}
           </h4>
         </Link>
       </div>

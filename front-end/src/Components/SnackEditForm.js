@@ -5,13 +5,13 @@ import axios from "axios";
 const API = process.env.REACT_APP_API_URL;
 
 function SnackEditForm() {
-  let { index } = useParams();
+  let { id } = useParams();
   const navigate = useNavigate();
 
   const [snack, setSnack] = useState({
     name: "",
     fiber: "",
-    protien: "",
+    protein: "",
     added_sugar: "",
     is_healthy: false,
     image: ""
@@ -25,15 +25,15 @@ function SnackEditForm() {
   };
 
   useEffect(() => {
-    axios.get(`${API}/snack/${index}`)
-      .then(response => setSnack(response.data))
+    axios.get(`${API}/snacks/${id}`)
+      .then(response => setSnack(response.data.payload))
       .catch(error => console.error(error))
   }, []);
   const updateSnack = () => {
-    axios.put(`${API}/snacks/${index}`, snack)
+    axios.put(`${API}/snacks/${id}`, snack)
       .then(response => {
         setSnack(response.data)
-        navigate(`/snacks/${index}`)
+        navigate(`/snacks`)
       })
       .catch(error => console.error(error))
   }
@@ -45,7 +45,7 @@ function SnackEditForm() {
   return (
     <div className="Edit">
       <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Name:</label>
+        <label htmlFor="name">Name :</label>
         <input
           id="name"
           value={snack.name}
@@ -54,23 +54,23 @@ function SnackEditForm() {
           placeholder="Snack-a-Log"
           required
         />
-        <label htmlFor="fiber">Fiber:</label>
+        <label htmlFor="fiber">Fiber : </label>
         <input
           id="fiber"
           type="number"
           value={snack.fiber}
           onChange={handleTextChange}
         />
-        <label htmlFor="protien">Protien:</label>
+        <label htmlFor="protein">Protein:</label>
         <input
-          id="protien"
+          id="protein"
           type="number"
-          value={snack.protien}
+          value={snack.protein}
           onChange={handleTextChange}
         />
         <label htmlFor="added_sugar">Added Sugar:</label>
         <input
-          id="addedSugar"
+          id="added_sugar"
           type="number"
           value={snack.added_sugar}
           onChange={handleTextChange}
@@ -78,9 +78,11 @@ function SnackEditForm() {
         <label htmlFor="isHealthy">Healthy:</label>
         <input
           id="isHealthy"
+          name="isHealthy"
           type="checkbox"
-          onChange={handleTextChange}
-          checked={snack.is_healthy}
+          value={snack.is_healthy}
+          onChange={handleCheckboxChange}
+          checked={snack.isHealthy}
         />
         <label htmlFor="image">Image:</label>
         <input
@@ -89,13 +91,14 @@ function SnackEditForm() {
           name="image"
           value={snack.image}
           onChange={handleTextChange}
+          placeholder="http://"
         />
         <br />
 
         <input type="submit" />
       </form>
-      <Link to={`snacks/${index}`}>
-        <button>Edit</button>
+      <Link to={`snacks/${id}`}>
+      
       </Link>
     </div>
   );

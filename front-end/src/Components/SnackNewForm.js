@@ -48,6 +48,66 @@ function SnackNewForm() {
         <input
           id="fiber"
           value={snack.fiber}
+          type="number"
+          onChange={handleTextChange}
+        />
+        <label htmlFor="protein">Protein:</label>
+        <input
+          id="protein"
+          value={snack.protien}
+          type="number"
+          onChange={handleTextChange}
+        />
+        <label htmlFor="added_sugar">Added Sugar:</label>
+        <input
+          id="added_sugar"
+          value={snack.added_sugar}
+          type="number"
+          onChange={handleTextChange}
+        />
+        <label htmlFor="isHealthy">Is Healthy:</label>
+        <input
+          id="isHealthy"
+          type="checkbox"
+          onChange={handleCheckboxChange}
+          checked={snack.isHealthy}
+        />
+        <label htmlFor="image">Image:</label>
+        <input
+          id="image"
+          name="image"
+          value={snack.image}
+          type="text"
+          onChange={handleTextChange}
+        />
+        <br />
+        <input type="submit" />
+      </form>
+    </div>
+  );
+  
+}
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    addSnack();
+  };
+  return (
+    <div className="New">
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="name">Name:</label>
+        <input
+          id="name"
+          value={snack.name}
+          type="text"
+          onChange={handleTextChange}
+          placeholder="Snack-a-Log"
+          required
+        />
+        <label htmlFor="fiber">Fiber:</label>
+        <input
+          id="fiber"
+          value={snack.fiber}
           type="text"
           onChange={handleTextChange}
         />
