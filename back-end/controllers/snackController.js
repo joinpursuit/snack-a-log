@@ -28,7 +28,7 @@ snacks.get("/", async (request, response) => {
   }
 });
 
-// SHOW Route - DONE 
+// SHOW Route - DONE
 snacks.get("/:id", async (req, res) => {
   const { id } = req.params;
   const snack = await getSnack(id);
@@ -43,9 +43,19 @@ snacks.get("/:id", async (req, res) => {
 snacks.post("/", checkName, checkBooleen, validateImage, async (req, res) => {
   try {
     const snack = await createSnack(req.body);
-    res.json(snack);
-  } catch (error) {
-    res.status(400).json({ error: error });
+    if (snack.id) {
+      res.status(200).json({
+        sucess: true,
+        payload: snack,
+      });
+    } else {
+      res.status(422).json({
+        success: false,
+        payload: "Must include name field",
+      });
+    }
+  } catch (err) {
+    console.log(err);
   }
 });
 
@@ -61,8 +71,8 @@ snacks.delete("/:id", async (req, res) => {
 
 snacks.put("/:id", validateImage, checkBooleen, checkName, async (req, res) => {
   const { id } = req.params;
-  console.log(id)
-  console.log(req.body,"********************")
+  console.log(id);
+  console.log(req.body, "********************");
   const updatedSnack = await updateSnack(req.body, id);
   if (updatedSnack.id) {
     res.status(200).json(updatedSnack);
