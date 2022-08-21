@@ -78,11 +78,11 @@ function SnackNewForm() {
             placeholder="Added_Sugar"
             onChange={handleNumberChange}
           />
-          <label for="url">Enter an https:// URL:</label>
+          <label for="image">Enter an https:// URL:</label>
           <input
             type="url"
             name="url"
-            id="url"
+            id="image"
             placeholder="https://example.com"
             pattern="https://.*"
             size="30"
