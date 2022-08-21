@@ -17,7 +17,7 @@ function SnackNewForm() {
 
   const addSnack = () => {
     axios.post(`${API}/snacks`, snack)
-      .then(response => navigate(`/snack`))
+      .then(response => navigate(`/snacks`))
       .catch(error => console.error(error))
   };
   const handleTextChange = (event) => {
