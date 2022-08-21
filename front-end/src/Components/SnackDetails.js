@@ -1,15 +1,28 @@
+//Importing React detructoring the library to pulling { useState, useEffect } from 'react'
+//Importing react-router-dom to destructor {Link, useParams, useNavigate}
+//Importing axios from axios
+//Importing SnackDetails Css
+
 import React, { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./SnackDetails.css";
 
-function SnackDetails() {
-  const [snack, setSnack] = useState({});
-  let { index } = useParams();
-  let navigate = useNavigate();
+//Created the function SnackDetails
 
+function SnackDetails() {
+  //invoking useState and setting the variable snack to an object and setSnack which updates the component
+  const [snack, setSnack] = useState({});
+  //creates a variable, destructors index from the URL parameter by invoking useParams()
+  let { index } = useParams();
+  //created the variable navigate and setting it equal to the invoked UseNavigate()
+  let navigate = useNavigate();
+  //create the variable API setting it equal to process.env.REACT_APP_API_URL
   const API = process.env.REACT_APP_API_URL;
 
+  //useEffect is invoked and within the it we have 2 parameters our axios that fetches our API and array of dependencies
+  //then we are updating the variable using setSnack SETTING it equal to res.data
+  //adding a catch to notify when an error occurs
   useEffect(() => {
     axios
       .get(`${API}/snacks/${index}`)
@@ -17,6 +30,9 @@ function SnackDetails() {
       .catch((err) => console.error(err));
   }, [index, navigate, API]);
 
+  //created a variable deleteSnack that calls axios and CRUD functionality Delete specifying what specifically should be deleted via the string within the parameter
+  //then setting the response to navigate to route to snacks
+  //catches if there is an error
   const deleteSnack = () => {
     axios
       .delete(`${API}snacks/${index}`)
@@ -24,20 +40,7 @@ function SnackDetails() {
       .catch((error) => console.error("catch", error));
   };
 
-  const handleDelete = () => {
-    deleteSnack();
-  };
-
-  // const handleEdit = (index) => {
-  //   axios.put(`${API}/snacks/${index}`, snack)
-  //   .then((res) => {
-  //     setSnack(res.data)
-  //     navigate(`/snacks/${index}`)
-  //   })
-  //   .catch((err) => console.log(err))
-
-  // }
-
+  
   return (
     <div className="snack-details">
       {/* is_healthy heart */}
@@ -61,7 +64,7 @@ function SnackDetails() {
       <Link to={`/snacks/${index}/edit`}>
         <button className="edit-button">Edit</button>
       </Link>
-      <button className="delete-button" onClick={handleDelete}>
+      <button className="delete-button" onClick={()=>{deleteSnack}}>
         Delete
       </button>
     </div>
