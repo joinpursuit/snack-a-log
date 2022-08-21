@@ -10,11 +10,15 @@
   margin-left: 25%;
 }
 
+.snack-info{
+  margin-top: 25px;
+}
+
 .snack{
   color:#ff4a1c;
 }
 .result{
-  color: #772014;
+  color: #d2230c;
 }
 
 button{
