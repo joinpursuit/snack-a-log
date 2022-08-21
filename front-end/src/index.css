@@ -1,3 +1,65 @@
+.card{
+    text-align: center;
+    margin: 0 auto; 
+        float: none;
+        margin-bottom: 20px; 
+        background-color: rgb(193, 173, 148);
+}
+h3{
+    text-align: center;
+    font-family: monospace;
+}
+
+
+nav {
+  background: rgb(236, 80, 60);
+ display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5rem;
+  box-shadow: 2px 2px 4px grey;
+  margin-bottom: 5rem;
+}
+.nav-logo {
+    height: 100px;
+  width: 300px;
+}
+
+.Nav Button {
+  margin: 5px;
+  font-size: large;
+}
+.Nav Button:hover {
+  background-color: antiquewhite;
+  color: black;
+}
+
+.Nav a {
+  text-decoration: none;
+  color: antiquewhite;
+}
+
+.Edit Button {
+  margin: 5px;
+  font-size: large;
+}
+.Edit Button:hover {
+  background-color: antiquewhite;
+  color: black;
+}
+
+.Edit h1 {
+  text-align: center;
+}
+.snack Button {
+  margin: 5px;
+  font-size: large;
+}
+.snack Button:hover {
+  background-color: antiquewhite;
+  color: black;
+}
+
 body {
   font-size: x-large;
   font-family: Overlock;
