@@ -1,16 +1,16 @@
 import { Link } from "react-router-dom";
+import HeartHealth from "./HeartHealth";
+import Card from "react-bootstrap/Card";
 
-function Snack({ snack, index }) {
+function Snack({ snack}) {
   return (
-    <div>
-      <p>{snack.fiber}</p>
-
-      <p>
-        <Link to={`/snacks/${index}`}>{snack.name} </Link>
-      </p>
-
-      <p>{snack.protein}</p>
-    </div>
+    <Card style={{ width: "20rem" }}>
+      <Card.Img variant="top" src={snack.image} alt="pic"></Card.Img>
+      <Card.Title>
+        <HeartHealth snack={snack} />
+        <Link to={`/snacks/${snack.id}`}>{snack.name} </Link>
+      </Card.Title>
+    </Card>
   );
 }
 

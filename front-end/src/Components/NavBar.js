@@ -5,12 +5,12 @@ import Button from "react-bootstrap/Button";
 
 export default function NavBar() {
   return (
-    <Navbar>
+    <Navbar className="NavBar">
       <Link to="/"> Home </Link>
-      <h1>
+      <h1 className="me-auto ms-1">
         <Link to="/snacks"> Snacks </Link>
       </h1>
-      <Button className="justify-content-end me-4" variant="outline-dark">
+      <Button className="justify-content-end me-4 " variant="outline-dark">
         <Link to="/snacks/new">New Snack</Link>
       </Button>
     </Navbar>

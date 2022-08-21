@@ -1,12 +1,10 @@
 import heartSolid from "../assets/heart-solid.png";
-import heartOutline from "../assets/heart-regular.png";
+import heartRegular from "../assets/heart-regular.png";
 
-function HeartHealth({ snackHealth }) {
-  return (
-    <>
-      <p>????</p>
-    </>
-  );
+export default function HealthCheck ({snack}) {
+    return (
+        <>
+        {snack.is_healthy ? <img src={heartSolid} alt="healthy" />  : <img src={heartRegular} alt="unhealthy" /> }
+        </>
+    );
 }
-
-export default HeartHealth;
