@@ -94,6 +94,15 @@ function SnackEditForm() {
           placeholder="Added_Sugar"
           onChange={handleNumberChange}
         />
+         <label for="image">Enter an https:// URL:</label>
+          <input
+            type="url"
+            name="image"
+            id="image"
+            placeholder="https://example.com"
+            pattern="https://.*"
+            size="30"
+          />
         <br />
         <br></br>
         <input type="submit" />
