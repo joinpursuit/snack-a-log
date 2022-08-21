@@ -5,6 +5,7 @@ const {
   getSnack,
   deleteSnack,
   createSnack,
+  updateSnack,
 } = require("../queries/snacks.js");
 
 const { checkImage, checkName } = require("../validations/checkSnacks.js");
@@ -46,6 +47,16 @@ snacks.post("/", checkImage, checkName, async (req, res) => {
     res.status(200).json({ payload: snack, success: true });
   } catch (error) {
     return error;
+  }
+});
+snacks.put("/:id", checkImage, checkName, async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const updatedSnack = await updateSnack( req.body, id);
+    res.status(200).json({ payload: updatedSnack, success: true });
+  } catch (error) {
+    res.status(404).json({ payload: "snack not updated", success: false });
   }
 });
 
