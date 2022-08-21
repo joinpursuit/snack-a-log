@@ -11,8 +11,7 @@ const {
 
 const {
   checkName,
-  checkBooleen,
-  validateImage,
+  checkBooleen
 } = require("../validations/checkSnacks.js");
 
 // INDEX Route - DONE
@@ -40,7 +39,7 @@ snacks.get("/:id", async (req, res) => {
 });
 
 // NEW Route - DONE
-snacks.post("/", checkName, checkBooleen, validateImage, async (req, res) => {
+snacks.post("/", checkName, checkBooleen, async (req, res) => {
   try {
     const snack = await createSnack(req.body);
     if (snack.id) {
@@ -69,7 +68,7 @@ snacks.delete("/:id", async (req, res) => {
   }
 });
 
-snacks.put("/:id", validateImage, checkBooleen, checkName, async (req, res) => {
+snacks.put("/:id", checkBooleen, checkName, async (req, res) => {
   const { id } = req.params;
   console.log(id);
   console.log(req.body, "********************");

@@ -14,9 +14,9 @@ function SnackDetails() {
   //invoking useState and setting the variable snack to an object and setSnack which updates the component
   const [snack, setSnack] = useState({});
   //creates a variable, destructors index from the URL parameter by invoking useParams()
-  let { index } = useParams();
+  const { index } = useParams();
   //created the variable navigate and setting it equal to the invoked UseNavigate()
-  let navigate = useNavigate();
+  const navigate = useNavigate();
   //create the variable API setting it equal to process.env.REACT_APP_API_URL
   const API = process.env.REACT_APP_API_URL;
 
@@ -35,11 +35,11 @@ function SnackDetails() {
   //catches if there is an error
   const deleteSnack = () => {
     axios
-      .delete(`${API}snacks/${index}`)
-      .then((response) => navigate(`/snacks`))
+      .delete(`${API}/snacks/${index}`)
+      .then(() => navigate(`/snacks`))
       .catch((error) => console.error("catch", error));
   };
-  const handleDelete =()=>{
+  const handleDelete = () => {
     deleteSnack()
   }
 
