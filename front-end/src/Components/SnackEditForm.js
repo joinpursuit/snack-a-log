@@ -17,7 +17,8 @@ function SnackEditForm() {
         name: "",
         fiber: "",
         protein: "",
-        added_sugar: ""
+        added_sugar: "",
+        is_healthy: false
       });
 
 

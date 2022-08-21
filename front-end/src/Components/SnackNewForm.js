@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 
 import { useNavigate } from "react-router-dom";
+import './SnackNewForm.css'
 
 const API_URL = process.env.REACT_APP_API_URL;
 
@@ -12,6 +13,7 @@ function SnackNewForm() {
     protein: "",
     added_sugar: "",
     category: "",
+    is_healthy: false
   });
 
   const navigate = useNavigate();

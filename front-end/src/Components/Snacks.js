@@ -10,10 +10,14 @@ import axios from "axios";
 //creating the variable API and setting it equal to process.env.REACT_APP_API_URL
 const API = process.env.REACT_APP_API_URL;
 
-//creating 
+//creating the function Snacks
 function Snacks() {
+  //invoking useState and setting the variable snack to an object and setSnack which updates the component
   const [snacks, setSnacks] = useState([]);
 
+  //useEffect is invoked and within the it we have 2 parameters our axios that fetches our API and array of dependencies
+  //then we are updating the variable using setSnack SETTING it equal to res.data
+  //adding a catch to notify when an error occurs
   useEffect(() => {
     axios
       .get(`${API}/snacks`)

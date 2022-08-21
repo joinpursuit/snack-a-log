@@ -1,0 +1,14 @@
+form{
+  text-align: center;
+  border: solid orange 2px;
+  height: auto;
+  width: 500px;
+  margin-left: 30%;
+}
+.new{
+  text-align: center;
+}
+fieldset{
+  text-align: center;
+
+}
