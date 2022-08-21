@@ -1,0 +1,57 @@
+body {
+    font-family:fantasy
+}
+
+h1 {
+    font-family:sans-serif;
+}
+
+main {
+    width: 90%;
+    margin: auto 0;
+}
+
+nav {
+    background-color: lightblue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em top bottom 15px, 3em left right 35px;
+  
+}
+
+nav {
+    margin-bottom: 1em 15px;
+} 
+
+a {
+    text-decoration: none;
+    color: red;
+}
+
+h4 {
+    font-size: 15px;
+    text-align: center;
+}
+
+.Snacks article {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 15px;
+} 
+
+.Snacks div {
+    width: 150px;
+    padding: 1em;
+    background-color: peachpuff;
+}
+
+.Snacks img {
+    width: 150px
+}
+
+.HomePage {
+    text-align:center;
+    font-family: fantasy;  
+}
