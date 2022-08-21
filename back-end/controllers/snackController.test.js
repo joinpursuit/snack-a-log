@@ -2,7 +2,6 @@ const request = require("supertest");
 
 const snacks = require("../app.js");
 const db = require("../db/dbConfig.js");
-
 const confirmHealth = require("../confirmHealth.js");
 
 describe("Basic root route", () => {
