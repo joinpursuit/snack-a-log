@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import Snacks from "../Components/Snacks";
 
 const Index = () => {
   return (
-    <div>Index</div>
-  )
-}
+    <section className='Snacks'>
+      <Snacks />
+    </section>
+  );
+};
 
-export default Index
+export default Index;

@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const SnackNewForm = () => {
-  return (
-    <div>SnackNewForm</div>
-  )
-}
+  return <div>SnackNewForm</div>;
+};
 
-export default SnackNewForm
+export default SnackNewForm;

@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import SnackDetails from "../Components/SnackDetails";
 
 const Show = () => {
   return (
-    <div>Show</div>
-  )
-}
+    <>
+      <SnackDetails />
+    </>
+  );
+};
 
-export default Show
+export default Show;

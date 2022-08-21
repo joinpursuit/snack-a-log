@@ -1,9 +1,20 @@
-import React from 'react'
-
-const Snack = () => {
+import React from "react";
+import HeartHealth from "./HeartHealth";
+import { Link } from "react-router-dom";
+const Snack = ({ snack }) => {
+  const { name, is_healthy, image, id } = snack;
   return (
-    <div>Snack</div>
-  )
-}
+    <article>
+      <div className='Snack'>
+        <Link to={`/snacks/${id}`}>
+          <img src={image} alt={name} />
+          <h4>
+            <HeartHealth snackHealth={is_healthy} /> {name}
+          </h4>
+        </Link>
+      </div>
+    </article>
+  );
+};
 
-export default Snack
+export default Snack;
