@@ -70,6 +70,8 @@ function SnackEditForm() {
       </span>
       <fieldset>
         <form onSubmit={handleSubmit}>
+        <br></br>
+
           <label>Snack</label>
           <input
             id="name"
@@ -113,13 +115,21 @@ function SnackEditForm() {
             size="30"
             onChange={handleUrlChange}
           />
-          <br />
+          <br></br>
+          <br></br>
           <br></br>
           <input type="submit" />
           <br></br>
+          <br></br>
+          <br></br>
+
           <Link to={`/snacks/${index}`}>
             <button>BACK</button>
+            <br></br>
+
           </Link>
+          <br></br>
+
         </form>
       </fieldset>
     </div>
