@@ -3,11 +3,14 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import Container from "react-bootstrap/esm/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 const API = process.env.REACT_APP_API_URL;
 
 export default function SnacksEditForm() {
-  let { id } = useParams();
+  const { id } = useParams();
   const navigate = useNavigate();
   const [validated, setValidated] = useState(false);
 
@@ -23,16 +26,15 @@ export default function SnacksEditForm() {
   useEffect(() => {
     axios
       .get(`${API}/snacks/${id}`)
-      .then((res) => setSnack(res.data))
+      .then((res) => setSnack(res.data.payload))
       .catch((err) => console.log(err));
   }, [id]);
 
   const updateSnack = (updatedSnack) => {
     axios
       .put(`${API}/snacks/${id}`, updatedSnack)
-      .then((res) => {
-        setSnack(res.data)
-        navigate(`/snacks/${id}`)
+      .then(() => {
+        navigate(`/snacks`);
       })
       .catch((error) => console.log(error));
   };
@@ -42,15 +44,15 @@ export default function SnacksEditForm() {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault(); 
+    e.preventDefault();
     if (!e.target.checkValidity()) {
-      e.stopPropagation(); 
+      e.stopPropagation();
     }
-    if(e.target.checkValidity()) {
-      updateSnack(snack, id)
+    if (e.target.checkValidity()) {
+      updateSnack(snack, id);
     }
     setValidated(true);
-  }
+  };
 
   return (
     <div>
@@ -62,69 +64,97 @@ export default function SnacksEditForm() {
           <li>and Sugar is less than 5</li>
         </ul>
       </section>
-      <h1>Add New Snack: </h1>
-      <Form noValidate validated={validated} onSubmit={handleSubmit}>
-        <Form.Group>
-          <Form.Label>Name: </Form.Label>
-          <Form.Control
-            required
-            id="snack_name"
-            value={snack.name}
-            type="text"
-            onChange={handleTextChange}
-            placeholder="Name"
-          />
-          <Form.Control.Feedback type="invalid">
-            Please add a snack name
-          </Form.Control.Feedback>
-          <Form.Control.Feedback type="valid">
-            Looks Good!
-          </Form.Control.Feedback>
-        </Form.Group>
-        <Form.Group>
-          <Form.Label>Fiber:</Form.Label>
-          <Form.Control
-            id="fiber"
-            type="number"
-            value={snack.fiber}
-            placeholder="Fiber"
-            onChange={handleTextChange}
-          />
-        </Form.Group>
-        <Form.Group>
-          <Form.Label>Protein:</Form.Label>
-          <Form.Control
-            id="protein"
-            type="number"
-            value={snack.protein}
-            placeholder="Protein"
-            onChange={handleTextChange}
-          />
-        </Form.Group>
-        <Form.Group>
-          <Form.Label>Added Sugar:</Form.Label>
-          <Form.Control
-            id="added_sugar"
-            type="number"
-            value={snack.added_sugar}
-            placeholder="Added Sugar"
-            onChange={handleTextChange}
-          />
-        </Form.Group>
-        <Form.Group>
-          <Form.Label>Image:</Form.Label>
-          <Form.Control
-            id="image"
-            type="text"
-            value={snack.image}
-            placeholder="http://"
-            onChange={handleTextChange}
-          />
-        </Form.Group>
-        <Button variant="secondary" type="submit">
-          Submit
-        </Button>
-      </Form>
+      <br />
+      <h1>Edit the Snack: </h1>
+      <Container>
+        <Form noValidate validated={validated} onSubmit={handleSubmit}>
+          <Form.Group>
+            <Form.Label htmlFor="name">Name:</Form.Label>
+            <Form.Control
+              id="name"
+              type="text"
+              value={snack.name}
+              placeholder="Name"
+              onChange={handleTextChange}
+              required
+            />
+            <Form.Control.Feedback type="invalid">
+              Please add a name
+            </Form.Control.Feedback>
+            <Form.Control.Feedback type="valid">
+              Looks Good!
+            </Form.Control.Feedback>
+          </Form.Group>
+          <br/>
+          <Row>
+            <Col md>
+              <Form.Group>
+                <Form.Label htmlFor="fiber">Fiber:</Form.Label>
+                <Form.Control
+                  id="fiber"
+                  type="number"
+                  value={snack.fiber}
+                  placeholder="Fiber"
+                  onChange={handleTextChange}
+                />
+              </Form.Group>
+            </Col>
+            <br/>
+            <Col md>
+              <Form.Group>
+                <Form.Label htmlFor="protein">Protein:</Form.Label>
+                <Form.Control
+                  id="protein"
+                  type="number"
+                  value={snack.protein}
+                  placeholder="Protein"
+                  onChange={handleTextChange}
+                />
+              </Form.Group>
+            </Col>
+            <br/>
+            <Col md>
+              <Form.Group>
+                <Form.Label htmlFor="added_sugar">Added Sugar:</Form.Label>
+                <Form.Control
+                  id="added_sugar"
+                  type="number"
+                  value={snack.added_sugar}
+                  placeholder="Added Sugar"
+                  onChange={handleTextChange}
+                />
+              </Form.Group>
+            </Col>
+          </Row>
+          <br/>
+          <Form.Group>
+            <Form.Label htmlFor="image">Image:</Form.Label>
+            <Form.Control
+              id="image"
+              type="text"
+              pattern="http[s]*://.+"
+              value={snack.image}
+              placeholder="http://"
+              onChange={handleTextChange}
+            />
+            <Form.Control.Feedback type="invalid">
+              Please add a valid url
+            </Form.Control.Feedback>
+            <Form.Control.Feedback type="valid">
+              Looks Good!
+            </Form.Control.Feedback>
+          </Form.Group>
+          <br />
+          <Button variant="secondary" type="submit">
+            Submit
+          </Button>
+          <Link to={`/snacks/${id}`}>
+            <Button variant="secondary" className="ms-2">
+              Cancel
+            </Button>
+          </Link>
+        </Form>
+      </Container>
     </div>
   );
 }

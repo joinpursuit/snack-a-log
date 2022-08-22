@@ -1,16 +1,21 @@
 import { Link } from "react-router-dom";
 import HeartHealth from "./HeartHealth";
 import Card from "react-bootstrap/Card";
+import Col from "react-bootstrap/Col";
 
-function Snack({ snack}) {
+function Snack({ snack }) {
   return (
-    <Card style={{ width: "20rem" }}>
-      <Card.Img variant="top" src={snack.image} alt="pic"></Card.Img>
-      <Card.Title>
-        <HeartHealth snack={snack} />
-        <Link to={`/snacks/${snack.id}`}>{snack.name} </Link>
-      </Card.Title>
-    </Card>
+    <Col xs={2} className='g-4'>
+      <Card className="text-center">
+        <Card.Img variant="top" src={snack.image} alt="pic"></Card.Img>
+        <Card.Title>
+          <span>
+            <HeartHealth snack={snack} />
+          </span>
+          <Link to={`/snacks/${snack.id}`}>{snack.name} </Link>
+        </Card.Title>
+      </Card>
+    </Col>
   );
 }
 
