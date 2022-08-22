@@ -46,7 +46,14 @@ function SnackNewForm() {
 
   return (
     <div className="new">
-      <h1>New Snack</h1>
+      <br />
+      <h4>Snack Health is determined by</h4>
+      <br/>
+      <li>protein is above 5</li>
+      <li>or fiber is above 5</li>
+      <li>and sugar is less than 5</li>
+      <br />
+
       <fieldset>
         <form onSubmit={handleSubmit}>
           <label>Snack</label>
