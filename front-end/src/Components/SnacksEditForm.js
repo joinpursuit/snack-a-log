@@ -55,8 +55,8 @@ export default function SnacksEditForm() {
   };
 
   return (
-    <div>
-      <section>
+    <div className="form-div">
+      <section className="form-health">
         <h3> Snack Health is determined by: </h3>
         <ul>
           <li>Protein is above 5</li>
@@ -65,7 +65,7 @@ export default function SnacksEditForm() {
         </ul>
       </section>
       <br />
-      <h1>Edit the Snack: </h1>
+      <h1 className="form-h1">Edit the Snack: </h1>
       <Container>
         <Form noValidate validated={validated} onSubmit={handleSubmit}>
           <Form.Group>
@@ -85,7 +85,7 @@ export default function SnacksEditForm() {
               Looks Good!
             </Form.Control.Feedback>
           </Form.Group>
-          <br/>
+          <br />
           <Row>
             <Col md>
               <Form.Group>
@@ -96,11 +96,18 @@ export default function SnacksEditForm() {
                   value={snack.fiber}
                   placeholder="Fiber"
                   min={0}
+                  required
                   onChange={handleTextChange}
                 />
+                <Form.Control.Feedback type="invalid">
+                  Please enter a value of 0 or above
+                </Form.Control.Feedback>
+                <Form.Control.Feedback type="valid">
+                  Looks Good!
+                </Form.Control.Feedback>
               </Form.Group>
             </Col>
-            <br/>
+            <br />
             <Col md>
               <Form.Group>
                 <Form.Label htmlFor="protein">Protein:</Form.Label>
@@ -110,11 +117,18 @@ export default function SnacksEditForm() {
                   value={snack.protein}
                   placeholder="Protein"
                   min={0}
+                  required
                   onChange={handleTextChange}
                 />
+                <Form.Control.Feedback type="invalid">
+                  Please enter a value of 0 or above
+                </Form.Control.Feedback>
+                <Form.Control.Feedback type="valid">
+                  Looks Good!
+                </Form.Control.Feedback>
               </Form.Group>
             </Col>
-            <br/>
+            <br />
             <Col md>
               <Form.Group>
                 <Form.Label htmlFor="added_sugar">Added Sugar:</Form.Label>
@@ -124,12 +138,19 @@ export default function SnacksEditForm() {
                   value={snack.added_sugar}
                   placeholder="Added Sugar"
                   min={0}
+                  required
                   onChange={handleTextChange}
                 />
+                <Form.Control.Feedback type="invalid">
+                  Please enter a value of 0 or above
+                </Form.Control.Feedback>
+                <Form.Control.Feedback type="valid">
+                  Looks Good!
+                </Form.Control.Feedback>
               </Form.Group>
             </Col>
           </Row>
-          <br/>
+          <br />
           <Form.Group>
             <Form.Label htmlFor="image">Image:</Form.Label>
             <Form.Control

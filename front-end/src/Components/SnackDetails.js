@@ -27,7 +27,7 @@ export default function SnackDetails() {
   };
 
   return (
-    <Container className=" text-center" fluid>
+    <Container className="text-center snack-container-card" fluid>
       <article>
         <div>
           <h2>{snack.name}</h2>

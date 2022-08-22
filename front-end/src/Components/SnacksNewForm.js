@@ -45,8 +45,8 @@ function SnacksNewForm() {
   };
 
   return (
-    <div>
-      <section>
+    <div className="form-div">
+      <section className="form-health">
         <h3> Snack Health is determined by: </h3>
         <ul>
           <li>Protein is above 5</li>
@@ -55,7 +55,7 @@ function SnacksNewForm() {
         </ul>
       </section>
       <br />
-      <h1>Add New Snack: </h1>
+      <h1 className="form-h1">Add New Snack: </h1>
       <Container>
         <Form noValidate validated={validated} onSubmit={handleSubmit}>
           <Form.Group>
@@ -86,10 +86,11 @@ function SnacksNewForm() {
                   value={snack.fiber}
                   placeholder="Fiber"
                   min={0}
+                  required
                   onChange={handleTextChange}
                 />
                 <Form.Control.Feedback type="invalid">
-                  Value cannot be below 0
+                  Please enter a value of 0 or above
                 </Form.Control.Feedback>
                 <Form.Control.Feedback type="valid">
                   Looks Good!
@@ -106,10 +107,11 @@ function SnacksNewForm() {
                   value={snack.protein}
                   placeholder="Protein"
                   min={0}
+                  required
                   onChange={handleTextChange}
                 />
                 <Form.Control.Feedback type="invalid">
-                  Value cannot be below 0
+                  Please enter a value of 0 or above
                 </Form.Control.Feedback>
                 <Form.Control.Feedback type="valid">
                   Looks Good!
@@ -126,10 +128,11 @@ function SnacksNewForm() {
                   value={snack.added_sugar}
                   placeholder="Added Sugar"
                   min={0}
+                  required
                   onChange={handleTextChange}
                 />
                 <Form.Control.Feedback type="invalid">
-                  Value cannot be below 0
+                  Please enter a value of 0 or above
                 </Form.Control.Feedback>
                 <Form.Control.Feedback type="valid">
                   Looks Good!

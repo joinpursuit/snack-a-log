@@ -18,3 +18,19 @@ a {
 .Nav a:hover{
   color: white;
 }
+
+.snack-container-card{
+  font-size: 3rem;
+}
+
+.form-div{
+  font-size: 20px;
+}
+
+.form-health{
+  margin-left: 20px;
+}
+
+.form-h1{
+  margin-left: 20px;
+}
