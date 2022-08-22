@@ -15,7 +15,7 @@ Aisha Kleemoff -> [@AishaCKleemoff](https://github.com/AishaCKleemoff)
 ### Front-end
 
 #### `Demo this App on Netlify`
-[Snack-a-log](LINK HERE)
+[Snack-a-log](https://cosmic-valkyrie-1d483b.netlify.app)
 
 ### Back-end
 
