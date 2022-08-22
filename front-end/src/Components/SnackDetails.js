@@ -27,7 +27,7 @@ function SnackDetails() {
   useEffect(() => {
     axios
       .get(`${API}/snacks/${index}`)
-      .then((res) => setSnack(res.data))
+      .then((res) => setSnack(res.data.payload))
       .catch((err) => console.error(err));
   }, [index, navigate, API]);
 
