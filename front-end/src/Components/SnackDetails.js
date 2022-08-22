@@ -7,6 +7,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./SnackDetails.css";
+import HeartHealth from "./HeartHealth";
 
 //Created the function SnackDetails
 
@@ -47,6 +48,8 @@ function SnackDetails() {
   return (
     <div className="snack-details">
       {/* is_healthy heart */}
+
+      <HeartHealth snackHealth={snack} />
       <div className="snack-detail">
 
       <section className ='snack-visual'>
