@@ -9,17 +9,18 @@ Jimmy Ayivor -> [@JimmyAyivor](https://github.com/JimmyAyivor),
 Aisha Kleemoff -> [@AishaCKleemoff](https://github.com/AishaCKleemoff)
 
 ===========================
+
 ## Project Links
 
 ### Front-end
-z#### `Demo this App on Netlify`
+
+#### `Demo this App on Netlify`
 [Snack-a-log](LINK HERE)
+
 ### Back-end
+
 #### `Test this Api on Heroku`
 [Snack-a-log Api](https://whispering-ridge-40250.herokuapp.com/snacks)
-
-
-
 
 
 ### `Trello link`
