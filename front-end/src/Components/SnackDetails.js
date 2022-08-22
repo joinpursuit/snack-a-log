@@ -14,10 +14,12 @@ const SnackDetails = () => {
     axios
       .get(`${API}/snacks/${id}`)
       .then((response) => {
-        if (isMounted) setSnack(response.data.payload)})
+        if (isMounted) setSnack(response.data.payload);
+      })
       .catch((error) => console.error(error));
-      return () => { isMounted = false }; // cleanup toggles value, if unmounted
-
+    return () => {
+      isMounted = false;
+    }; 
   }, [id, navigate]);
 
   const handleDelete = () => {

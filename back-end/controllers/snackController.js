@@ -8,7 +8,11 @@ const {
   updateSnack,
 } = require("../queries/snacks.js");
 
-const { checkImage, checkName } = require("../validations/checkSnacks.js");
+const {
+  checkName,
+  checkImage,
+  checkHealth,
+} = require("../validations/checkSnacks.js");
 
 snacks.get("/", async (req, res) => {
   const allSnacks = await getAllSnacks();
@@ -41,7 +45,7 @@ snacks.delete("/:id", async (req, res) => {
   }
 });
 
-snacks.post("/", checkImage, checkName, async (req, res) => {
+snacks.post("/", checkName, checkImage, checkHealth, async (req, res) => {
   try {
     const snack = await createSnack(req.body);
     res.status(200).json({ payload: snack, success: true });
@@ -49,11 +53,11 @@ snacks.post("/", checkImage, checkName, async (req, res) => {
     return error;
   }
 });
-snacks.put("/:id", checkImage, checkName, async (req, res) => {
+snacks.put("/:id", checkName, checkImage, checkHealth, async (req, res) => {
   const { id } = req.params;
 
   try {
-    const updatedSnack = await updateSnack( req.body, id);
+    const updatedSnack = await updateSnack(req.body, id);
     res.status(200).json({ payload: updatedSnack, success: true });
   } catch (error) {
     res.status(404).json({ payload: "snack not updated", success: false });

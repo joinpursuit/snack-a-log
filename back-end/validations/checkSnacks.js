@@ -1,3 +1,19 @@
+const confirmHealth = require("../confirmHealth");
+const checkName = (req, res, next) => {
+  if (req.body.name) {
+    const capitalizedName = req.body.name.toLowerCase().split(" ");
+    for (let i = 0; i < capitalizedName.length; i++) {
+      if (capitalizedName[i].length > 2) {
+        capitalizedName[i] =
+          capitalizedName[i][0].toUpperCase() + capitalizedName[i].substr(1);
+      }
+    }
+    req.body.name = capitalizedName.join(" ");
+    next();
+  } else {
+    res.status(400).json({ error: "Please enter a name.." });
+  }
+};
 const checkImage = (req, res, next) => {
   if (req.body.image) {
     next();
@@ -8,21 +24,10 @@ const checkImage = (req, res, next) => {
   }
 };
 
-const checkName = (req, res, next) => {
-  if (req.body.name) {
-    const capitalizedName = req.body.name.toLowerCase().split(" ");
-    for (let i = 0; i < capitalizedName.length; i++) {
-      if (capitalizedName[i].length > 2) {
-        capitalizedName[i] =
-          capitalizedName[i][0].toUpperCase() + capitalizedName[i].substr(1);
-      }
-    }
-
-    req.body.name = capitalizedName.join(" ");
+const checkHealth = (req, res, next) => {
+  if (req.body) {
+    req.body.is_healthy = confirmHealth(req.body);
     next();
-  } else {
-    res.status(400).json({ error: "Please enter a name.." });
   }
 };
-
-module.exports = { checkImage, checkName };
+module.exports = { checkName, checkImage, checkHealth };

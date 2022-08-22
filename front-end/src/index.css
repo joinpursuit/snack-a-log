@@ -72,6 +72,10 @@ h4 img {
     font-weight: 500;
 }
 
+aside img {
+    width: 100px;
+}
+
 .ShowImg {
     width: 300px;
 }
@@ -82,4 +86,32 @@ h4 img {
 
 .NotHealthy {
     color: red;
+}
+
+.NewPageInfo {
+    margin: auto;
+    width: max-content;
+    padding: 10px;
+}
+
+.New {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+.Edit {
+    margin: 50px;
+}
+
+.EditPage {
+    display: inline-flex;
+}
+
+input[type="number"] {
+    width: 450px
+}
+
+input[type="text"] {
+    width: 450px
 }
