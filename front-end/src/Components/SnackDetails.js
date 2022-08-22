@@ -72,6 +72,7 @@ function SnackDetails() {
       <button className="delete-button" onClick={handleDelete}>
         Delete
       </button>
+      
     </div>
   );
 }
