@@ -19,7 +19,7 @@ function Snacks() {
 
   return (
       <Container fluid>
-        <Row className="g-2">
+        <Row sm={"auto"} md={"auto"} lg={"auto"} className="g-2">
           {snacks.map((snack, id) => {
             return <Snack key={id} snack={snack} id={id} />;
           })}

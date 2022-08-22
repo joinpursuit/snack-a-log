@@ -75,7 +75,7 @@ function SnacksNewForm() {
               Looks Good!
             </Form.Control.Feedback>
           </Form.Group>
-          <br/>
+          <br />
           <Row>
             <Col md>
               <Form.Group>
@@ -85,11 +85,18 @@ function SnacksNewForm() {
                   type="number"
                   value={snack.fiber}
                   placeholder="Fiber"
+                  min={0}
                   onChange={handleTextChange}
                 />
+                <Form.Control.Feedback type="invalid">
+                  Value cannot be below 0
+                </Form.Control.Feedback>
+                <Form.Control.Feedback type="valid">
+                  Looks Good!
+                </Form.Control.Feedback>
               </Form.Group>
             </Col>
-            <br/>
+            <br />
             <Col md>
               <Form.Group>
                 <Form.Label htmlFor="protein">Protein:</Form.Label>
@@ -98,11 +105,18 @@ function SnacksNewForm() {
                   type="number"
                   value={snack.protein}
                   placeholder="Protein"
+                  min={0}
                   onChange={handleTextChange}
                 />
+                <Form.Control.Feedback type="invalid">
+                  Value cannot be below 0
+                </Form.Control.Feedback>
+                <Form.Control.Feedback type="valid">
+                  Looks Good!
+                </Form.Control.Feedback>
               </Form.Group>
             </Col>
-            <br/>
+            <br />
             <Col md>
               <Form.Group>
                 <Form.Label htmlFor="added_sugar">Added Sugar:</Form.Label>
@@ -111,12 +125,19 @@ function SnacksNewForm() {
                   type="number"
                   value={snack.added_sugar}
                   placeholder="Added Sugar"
+                  min={0}
                   onChange={handleTextChange}
                 />
+                <Form.Control.Feedback type="invalid">
+                  Value cannot be below 0
+                </Form.Control.Feedback>
+                <Form.Control.Feedback type="valid">
+                  Looks Good!
+                </Form.Control.Feedback>
               </Form.Group>
             </Col>
           </Row>
-          <br/>
+          <br />
           <Form.Group>
             <Form.Label htmlFor="image">Image:</Form.Label>
             <Form.Control
@@ -134,7 +155,7 @@ function SnacksNewForm() {
               Looks Good!
             </Form.Control.Feedback>
           </Form.Group>
-          <br/>
+          <br />
           <Button variant="secondary" type="submit">
             Submit
           </Button>

@@ -42,16 +42,16 @@ export default function SnackDetails() {
             <div>
               {" "}
               <Link to={`/snacks`}>
-                <Button className="me-4 mt-4">Back</Button>
+                <Button variant="outline-dark" className="me-4 mt-4">Back</Button>
               </Link>
             </div>
             <div>
               <Link to={`/snacks/${id}/edit`}>
-                <Button className="me-4 mt-4">Edit</Button>
+                <Button variant="outline-dark" className="me-4 mt-4">Edit</Button>
               </Link>
             </div>
             <div>
-              <Button className="mt-4" onClick={handleDelete}>
+              <Button variant="outline-dark" className="mt-4" onClick={handleDelete}>
                 Delete
               </Button>
             </div>

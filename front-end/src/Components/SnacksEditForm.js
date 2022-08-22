@@ -95,6 +95,7 @@ export default function SnacksEditForm() {
                   type="number"
                   value={snack.fiber}
                   placeholder="Fiber"
+                  min={0}
                   onChange={handleTextChange}
                 />
               </Form.Group>
@@ -108,6 +109,7 @@ export default function SnacksEditForm() {
                   type="number"
                   value={snack.protein}
                   placeholder="Protein"
+                  min={0}
                   onChange={handleTextChange}
                 />
               </Form.Group>
@@ -121,6 +123,7 @@ export default function SnacksEditForm() {
                   type="number"
                   value={snack.added_sugar}
                   placeholder="Added Sugar"
+                  min={0}
                   onChange={handleTextChange}
                 />
               </Form.Group>

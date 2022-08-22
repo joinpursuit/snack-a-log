@@ -11,6 +11,7 @@ const {
 
 const { checkName, validateImageUrl } = require('../validations/checkSnacks')
 
+
 snacks.get('/', async (req, res) => {
   const allSnacks = await getAllSnacks(); 
   if(allSnacks[0]) {

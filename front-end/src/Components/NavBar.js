@@ -5,8 +5,7 @@ import Button from "react-bootstrap/Button";
 
 export default function NavBar() {
   return (
-    <Navbar className="NavBar">
-      <Link to="/"> Home </Link>
+    <Navbar className="Nav">
       <h1 className="me-auto ms-1">
         <Link to="/snacks"> Snacks </Link>
       </h1>
