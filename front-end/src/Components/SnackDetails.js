@@ -4,7 +4,7 @@ import { Link, useParams, useNavigate  } from "react-router-dom";
 
 import HeartHealth from "./HeartHealth.js"
 
-const API = process.env.REACT_APP_API_URL
+const API = process.env.REACT_APP_API_URL;
 
 function SnackDetails() {
     const [snack, setSnack ] = useState([]);
