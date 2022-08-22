@@ -1,12 +1,15 @@
 form{
   text-align: center;
-  border: solid orange 2px;
+  border: #ff4a1c solid 2px;
   height: auto;
-  width: 500px;
-  margin-left: 30%;
+  width: 1000px;
+  margin-left: 12%;
 }
 .new{
   text-align: center;
+}
+.new h1 :hover{
+  color: #ff4a1c;
 }
 fieldset{
   text-align: center;

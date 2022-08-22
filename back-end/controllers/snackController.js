@@ -9,17 +9,13 @@ const {
   updateSnack,
 } = require("../queries/snacks.js");
 
-const {
-  checkName,
-  checkBooleen
-} = require("../validations/checkSnacks.js");
-
+const { checkName, checkBooleen } = require("../validations/checkSnacks.js");
+const { confirmHealth }= require('../confirmHealth.js')
 // INDEX Route - DONE
 snacks.get("/", async (request, response) => {
   const allSnacks = await getAllSnacks();
-  console.log(allSnacks);
   if (allSnacks[0]) {
-    response.status(200).json(allSnacks);
+    response.status(200).json({ payload: allSnacks, success: true });
   } else {
     response
       .status(500)
@@ -32,19 +28,24 @@ snacks.get("/:id", async (req, res) => {
   const { id } = req.params;
   const snack = await getSnack(id);
   if (snack.id) {
-    res.json(snack);
+    res.json({payload:snack, success:true});
+
   } else {
-    res.status(404).json({ error: "not found (line28" });
+    res.status(404).json({ payload:'not found', success:false, error:'Show Route Error-Snack Controller Line27'  });
   }
 });
 
 // NEW Route - DONE
 snacks.post("/", checkName, checkBooleen, async (req, res) => {
+  let name = req.body.name.split()
+  console.log(name)
+
+
   try {
     const snack = await createSnack(req.body);
     if (snack.id) {
       res.status(200).json({
-        sucess: true,
+        success: true,
         payload: snack,
       });
     } else {
@@ -71,7 +72,7 @@ snacks.delete("/:id", async (req, res) => {
 snacks.put("/:id", checkBooleen, checkName, async (req, res) => {
   const { id } = req.params;
   console.log(id);
-  console.log(req.body, "********************");
+ 
   const updatedSnack = await updateSnack(req.body, id);
   if (updatedSnack.id) {
     res.status(200).json(updatedSnack);

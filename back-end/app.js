@@ -14,7 +14,7 @@ const snackController = require('./controllers/snackController')
 app.use('/snacks', snackController);
 
 app.get('/',(request,response)=>{
-  response.send('Welcome to your Vending Machine')
+  response.send(`Get Snack'n at Snack-a-log!`)
 })
 
 app.get("*",(request,response) => {

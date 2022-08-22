@@ -21,7 +21,7 @@ function Snacks() {
   useEffect(() => {
     axios
       .get(`${API}/snacks`)
-      .then((res) => setSnacks(res.data))
+      .then((res) => setSnacks(res.data.payload))
       .catch((err) => console.error(err));
   }, []);
   console.log(snacks);
