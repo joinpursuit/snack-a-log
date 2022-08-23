@@ -47,14 +47,13 @@ function SnackDetails() {
   
   return (
     <div className="snack-details">
-      {/* is_healthy heart */}
 
       <HeartHealth snackHealth={snack} />
       <div className="snack-detail">
 
       <section className ='snack-visual'>
 
-      <h3 className='snack'>{snack.name} </h3>
+      <h2 className='snack'>{snack.name} </h2>
       <img src={snack.image} alt={snack.name} />
       </section>
       <section className="snack-info">
@@ -65,7 +64,7 @@ function SnackDetails() {
       {snack.added_sugar > 1 ? <h3>Snack Added Sugar: <br></br> <span className ='result'>{snack.added_sugar} grams</span></h3> : <h3>Snack Added Sugar: <br></br><span className='result'>{snack.added_sugar} gram</span></h3>}
       </section>
       </div>
-
+<br/>
       <Link to={`/snacks`}>
         <button className="back-button">Back</button>
       </Link>

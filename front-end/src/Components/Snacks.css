@@ -3,7 +3,6 @@
   grid-template-columns: 1fr 1fr 1fr;
   padding: 5% 5%;
   height: 475px;
-  border: solid 1px orange;
   overflow:scroll;
   
 }
@@ -24,5 +23,7 @@ img{
 p{
   text-align: center;
   padding-right: 35px;
+  font-size: medium;
+  color: #ff4a1c ;
  
 }

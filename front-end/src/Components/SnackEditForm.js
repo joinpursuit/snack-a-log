@@ -13,10 +13,11 @@ function SnackEditForm() {
 
   const [snack, setSnack] = useState({
     name: "",
-    fiber: "",
-    protein: "",
-    added_sugar: "",
+    fiber: 0,
+    protein: 0,
+    added_sugar: 0,
     is_healthy: false,
+    url: "",
   });
 
   useEffect(() => {
@@ -24,7 +25,7 @@ function SnackEditForm() {
       .get(`${API}/snacks/${index}`)
       .then((res) => setSnack(res.data))
       .catch((error) => console.error(error));
-  }, [index, API]);
+  }, [index, navigate]);
 
   const updateSnack = () => {
     axios
@@ -58,20 +59,26 @@ function SnackEditForm() {
 
   return (
     <div className="edit">
-      <h1>Edit</h1>
-<br/>
-<br/>
+      <h2>Edit</h2>
+      <br />
+      <br />
+      <br />
+      <br />
 
-      <span>
+      <section>
+        {/* <p>Snack Health is determined by:</p> */}
         <h4>Snack Health is determined by</h4>
-        <li>protein is above 5</li>
-        <li>or fiber is above 5</li>
-        <li>and sugar is less than 5</li>
-      </span>
+        <ul>
+          <li>protein is above 5</li>
+          <li>or fiber is above 5</li>
+          <li>and added sugar is less than 5</li>
+        </ul>
+      </section>
+      <br />
+      <br />
       <fieldset>
         <form onSubmit={handleSubmit}>
-        <br></br>
-
+          <br></br>
           <label>Snack</label>
           <input
             id="name"
@@ -85,7 +92,7 @@ function SnackEditForm() {
             id="fiber"
             value={snack.fiber}
             type="number"
-            placeholder="Name"
+            placeholder="Fiber"
             onChange={handleNumberChange}
           />
           <label>Protein</label>
@@ -126,10 +133,8 @@ function SnackEditForm() {
           <Link to={`/snacks/${index}`}>
             <button>BACK</button>
             <br></br>
-
           </Link>
           <br></br>
-
         </form>
       </fieldset>
     </div>

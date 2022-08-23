@@ -9,11 +9,11 @@ const API_URL = process.env.REACT_APP_API_URL;
 function SnackNewForm() {
   const [snack, setSnack] = useState({
     name: "",
-    fiber: "",
-    protein: "",
-    added_sugar: "",
-    category: "",
+    fiber: 0,
+    protein: 0,
+    added_sugar: 0,
     is_healthy: false,
+    url: "",
   });
 
   const navigate = useNavigate();
@@ -47,15 +47,22 @@ function SnackNewForm() {
   return (
     <div className="new">
       <br />
-      <h4>Snack Health is determined by</h4>
-      <br/>
-      <li>protein is above 5</li>
-      <li>or fiber is above 5</li>
-      <li>and sugar is less than 5</li>
       <br />
-
+      <br />
+      <br />
+      <section>
+        <h4>Snack Health is determined by:</h4>
+        <ul>
+          <li>protein is above 5</li>
+          <li>or fiber is above 5</li>
+          <li>and added sugar is less than 5</li>
+        </ul>
+      </section>
+      <br />
+      <br />
       <fieldset>
         <form onSubmit={handleSubmit}>
+          <br></br>
           <label>Snack</label>
           <input
             id="name"
@@ -73,6 +80,7 @@ function SnackNewForm() {
             placeholder="Name"
             onChange={handleNumberChange}
           />
+
           <label>Protein</label>
           <input
             id="protein"
@@ -81,6 +89,7 @@ function SnackNewForm() {
             placeholder="Protein"
             onChange={handleNumberChange}
           />
+
           <label>Added Sugar</label>
           <input
             id="added_sugar"
@@ -89,6 +98,7 @@ function SnackNewForm() {
             placeholder="Added_Sugar"
             onChange={handleNumberChange}
           />
+
           <label for="image">Enter an https:// URL:</label>
           <input
             type="url"
@@ -101,14 +111,17 @@ function SnackNewForm() {
             onChange={handleUrlChange}
           />
           <br />
-          <br></br>
+          <br />
+          <br />
+
           <input value={"Sumbit"} type="submit" />
+          <br />
+          <br />
+          <br />
         </form>
-        <br></br>
-        {/* <Link to={`/snacks/${index}`}>
-        <button>BACK</button>
-      </Link> */}
       </fieldset>
+
+      <br />
     </div>
   );
 }
