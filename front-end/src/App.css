@@ -1,0 +1,36 @@
+.Nav {
+  background: #F2C078;
+  display: flex;
+  justify-content: space-between;
+  padding: 2em;
+  box-shadow: 2px 2px 4px grey;
+  margin-bottom: 5em;
+}
+
+body {
+  background-color: #FAEDCA;
+}
+
+a {
+  color:black
+}
+
+.Nav a:hover{
+  color: white;
+}
+
+.snack-container-card{
+  font-size: 3rem;
+}
+
+.form-div{
+  font-size: 20px;
+}
+
+.form-health{
+  margin-left: 20px;
+}
+
+.form-h1{
+  margin-left: 20px;
+}
