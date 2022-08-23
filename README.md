@@ -1,5 +1,8 @@
 # Full Stack Application Pair Project
 
+Project by [@JedeBrahma](https://github.com/JedeBrahma) and [@MichaelKleemoff](https://github.com/MichaelKleemoff)
+
+
 ## Snack-a-log
 
 Create an app that allows users to log their favorite snacks. Add functionality that allows users to see whether or not their snack is healthy based on a simple algorithm.
