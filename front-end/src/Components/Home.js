@@ -1,7 +1,6 @@
 import React from 'react'
 import  './Home.css'
 import image from './Images/Image3.webp'
-import {Link} from 'react-router-dom'
 
 function Home() {
   return (
