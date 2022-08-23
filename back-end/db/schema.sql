@@ -10,7 +10,7 @@ CREATE TABLE snacks (
 	protein INTEGER, 
 	added_sugar INTEGER, 
 	is_healthy BOOLEAN, 
-	image_url TEXT NOT NULL
+	image_url TEXT 
 );
 
 

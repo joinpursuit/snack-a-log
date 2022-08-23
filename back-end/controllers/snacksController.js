@@ -12,16 +12,18 @@ const {
 } = require('../queries/snacks.js');
 
 const {
-	checkBoolean,
+	checkAddedSugar,
+	checkFiber,
 	checkName,
-	validateImageUrl,
+	checkProtein,
 } = require('../validations/checkSnacks.js');
+
+const confirmHealth = require('../confirmHealth');
 
 // INDEX ROUTE
 snacks.get('/', async (req, res) => {
 	const allSnacks = await getAllSnacks();
-	console.log(allSnacks);
-	if (allSnacks) {
+	if (allSnacks[0]) {
 		res.status(200).json(allSnacks);
 	} else {
 		res.status(500).json({ error: 'server error!' });
@@ -32,7 +34,7 @@ snacks.get('/', async (req, res) => {
 snacks.get('/:id', async (req, res) => {
 	const { id } = req.params;
 	const snack = await getSnack(id);
-	if (snack) {
+	if (snack.id) {
 		res.json(snack);
 	} else {
 		res.status(404).json({ error: 'Not found' });
@@ -42,11 +44,14 @@ snacks.get('/:id', async (req, res) => {
 // CREATE ROUTE
 snacks.post(
 	'/',
-	checkBoolean,
+	checkAddedSugar,
+	checkFiber,
 	checkName,
-	validateImageUrl,
+	checkProtein,
 	async (req, res) => {
 		try {
+			const isHealthy = confirmHealth(req.body);
+			req.body.is_healthy = isHealthy;
 			const snack = await createSnack(req.body);
 			res.json(snack);
 		} catch (error) {
@@ -58,11 +63,14 @@ snacks.post(
 // UPDATE ROUTE
 snacks.put(
 	'/:id',
-	checkBoolean,
+	checkAddedSugar,
+	checkFiber,
 	checkName,
-	validateImageUrl,
+	checkProtein,
 	async (req, res) => {
 		const { id } = req.params;
+		const isHealthy = confirmHealth(req.body);
+		req.body.is_healthy = isHealthy;
 		const updatedSnack = await updateSnack(req.body, id);
 		if (updatedSnack.id) {
 			res.status(200).json(updatedSnack);

@@ -9,33 +9,36 @@ const checkName = (req, res, next) => {
 	}
 };
 
-const checkBoolean = (req, res, next) => {
-	const { is_healthy } = req.body;
-	if (
-		is_healthy === 'true' ||
-		is_healthy === 'false' ||
-		is_healthy === true ||
-		is_healthy === false ||
-		is_healthy === undefined
-	) {
+const checkFiber = (req, res, next) => {
+	const { fiber } = req.body;
+	if (Number(fiber)) {
 		next();
 	} else {
-		res.status(400).json({ error: 'is_favorite should be a boolean.' });
+		res.status(400).json({ error: 'We need fiber to be a number.' });
 	}
 };
 
-const validateImageUrl = (req, res, next) => {
-	const { image_url } = req.body;
-	if (
-		image_url.substring(0, 7) === 'http://' ||
-		image_url.substring(0, 8) === 'https://'
-	) {
+const checkProtein = (req, res, next) => {
+	const { protein } = req.body;
+	if (Number(protein)) {
 		next();
 	} else {
-		res
-			.status(400)
-			.json({ error: 'URL does not match "http://" or "https://" ' });
+		res.status(400).json({ error: 'We need protein to be a number.' });
 	}
 };
 
-module.exports = { checkBoolean, checkName, validateImageUrl };
+const checkAddedSugar = (req, res, next) => {
+	const { added_sugar } = req.body;
+	if (Number(added_sugar)) {
+		next();
+	} else {
+		res.status(400).json({ error: 'We need added sugar to be a number.' });
+	}
+};
+
+module.exports = {
+	checkAddedSugar,
+	checkFiber,
+	checkName,
+	checkProtein,
+};
