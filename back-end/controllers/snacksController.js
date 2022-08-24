@@ -19,6 +19,7 @@ const {
 } = require('../validations/checkSnacks.js');
 
 const confirmHealth = require('../confirmHealth');
+const validName = require('../validations/validName');
 
 // INDEX ROUTE
 snacks.get('/', async (req, res) => {
@@ -52,6 +53,8 @@ snacks.post(
 		try {
 			const isHealthy = confirmHealth(req.body);
 			req.body.is_healthy = isHealthy;
+			const validatedName = validName(req.body);
+			req.body.name = validatedName;
 			const snack = await createSnack(req.body);
 			res.json(snack);
 		} catch (error) {
@@ -71,6 +74,8 @@ snacks.put(
 		const { id } = req.params;
 		const isHealthy = confirmHealth(req.body);
 		req.body.is_healthy = isHealthy;
+		const validatedName = validName(req.body);
+		req.body.name = validatedName;
 		const updatedSnack = await updateSnack(req.body, id);
 		if (updatedSnack.id) {
 			res.status(200).json(updatedSnack);
