@@ -1,5 +1,5 @@
 {
-  "name": "bookmarks",
+  "name": "snack-a-log-back-end",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -10,7 +10,7 @@
     "test": "jest --runInBand"
   },
   "keywords": [],
-  "author": "",
+  "author": "Michael Kleemoff, Jede Brahma",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
