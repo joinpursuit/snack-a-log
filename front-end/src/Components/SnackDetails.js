@@ -23,7 +23,7 @@ function SnackDetails() {
 			.catch((c) => {
 				console.error('catch', c);
 			});
-	}, [index, navigate, API]);
+	}, [index, navigate]);
 
 	const deleteSnack = () => {
 		axios

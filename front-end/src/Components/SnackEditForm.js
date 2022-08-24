@@ -23,7 +23,7 @@ function SnackEditForm() {
 			.get(`${API}/snacks/${index}`)
 			.then((response) => setSnack(response.data))
 			.catch((error) => console.log(error));
-	}, [index, API]);
+	}, [index]);
 
 	const updateSnack = (updatedSnack) => {
 		axios
