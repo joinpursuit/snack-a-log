@@ -1,7 +1,6 @@
-import heartSolid from "../assets/heart-solid.png";
-import heartOutline from "../assets/heart-regular.png";
+
 import Modal from "react-bootstrap/Modal";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 
@@ -11,9 +10,9 @@ function HeartHealth({ snackHealth }) {
 
   const [isOpen, setIsOpen] = useState(true);
 
-  const showModal = () => {
-    setIsOpen(true);
-  };
+  // const showModal = () => {
+  //   setIsOpen(true);
+  // };
 
   const hideModal = () => {
     setIsOpen(false);
@@ -28,7 +27,7 @@ function HeartHealth({ snackHealth }) {
           <Modal.Title>Health Status</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-        {snackHealth.fiber > 5 || snackHealth.protein > 5 && snackHealth.added_sugar < 5   ? 'This snack is UNHEALTHY' : 'This snack is HEALTHY'}
+        {snackHealth.fiber > 5 || snackHealth.protein > 5 || snackHealth.added_sugar < 5   ? 'This snack is UNHEALTHY' : 'This snack is HEALTHY'}
         </Modal.Body>
         <Modal.Footer>
           <button onClick={hideModal}>THANK YOU</button>
