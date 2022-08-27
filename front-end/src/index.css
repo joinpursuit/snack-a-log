@@ -1,0 +1,117 @@
+body {
+    font-family: 'Overlock', 'cursive';
+}
+
+h1 {
+    font-family: 'Carter One';
+}
+
+main {
+    width: 900px;
+    margin:  auto;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(37, 36, 34);
+    align-items: center;
+    padding: 15px 45px;
+    margin-bottom: 15px;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+    color: rgba(235, 94, 40);
+}
+
+h4 {
+    text-align: center;
+    margin: 0;
+    font-size: 15px;
+}
+
+.Snacks {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.Snacks article {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.Snacks div {
+    width: 150px;
+    padding: 15px;
+    background-color: rgba(255, 252, 242);
+}
+
+img {
+    width: 150px;
+}
+
+h4 img {
+    width: 15px;
+}
+
+.FourOFour {
+    text-align: center;
+}
+
+.WelcomeMsg {
+    text-align: center;
+}
+
+.Show>p {
+    text-align: center;
+    font-size: large;
+    font-weight: 500;
+}
+
+aside img {
+    width: 100px;
+}
+
+.ShowImg {
+    width: 300px;
+}
+
+.Healthy {
+    color: green;
+}
+
+.NotHealthy {
+    color: red;
+}
+
+.NewPageInfo {
+    margin: auto;
+    width: max-content;
+    padding: 10px;
+}
+
+.New {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+.Edit {
+    margin: 50px;
+}
+
+.EditPage {
+    display: inline-flex;
+}
+
+input[type="number"] {
+    width: 450px
+}
+
+input[type="text"] {
+    width: 450px
+}

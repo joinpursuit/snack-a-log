@@ -1,5 +1,7 @@
 const URL = Cypress.env("URL");
 const API = Cypress.env("API");
+const CI_ENV = Cypress.env("ci");
+
 
 let id = 1;
 
