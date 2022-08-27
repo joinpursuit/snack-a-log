@@ -1,0 +1,22 @@
+.home{
+  text-align: center;
+  margin-top: 3%;
+
+}
+.vending-machine{
+  height: 400px;
+  width: 350px;
+  margin: 5px 20px;
+
+}
+
+.vending-machine :hover, 
+.vending-machine :focus,
+.vending-machine:active {
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+h2{
+  color: #ff4a1c ;
+}

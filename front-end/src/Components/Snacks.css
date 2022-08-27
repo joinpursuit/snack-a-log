@@ -1,0 +1,29 @@
+.snacks-index{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 5% 5%;
+  height: 475px;
+  /* overflow:scroll; */
+  
+}
+
+.snacks{
+  height: 300px;
+  width: 300px;
+  padding: 20px;
+  padding-bottom: 30px;  
+}
+
+img{
+  height: 250px;
+  width: 250px;
+  border-radius: 50%
+}
+
+p{
+  text-align: center;
+  padding-right: 35px;
+  font-size: medium;
+  color: #ff4a1c ;
+ 
+}
